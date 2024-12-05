@@ -10,6 +10,28 @@
 </ion-header>
 
 <ion-content>
+  <!-- Acordeón -->
+  <ion-accordion-group expand="inset" style="margin: 16px;">
+    <ion-accordion value="pedido">
+      <ion-item slot="header" color="primary">
+        <ion-label style="color: white;">Realiza tu pedido</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list>
+          <ion-item button (click)="repetirPedido()">
+            <ion-label>Repetir último pedido</ion-label>
+          </ion-item>
+          <ion-item button (click)="realizarPedido()">
+            <ion-label>Realizar nuevo pedido</ion-label>
+          </ion-item>
+          <ion-item button (click)="mostrarMenu()">
+            <ion-label>Menú</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
   <ion-card>
     <ion-card-header>
       <ion-card-title>Bienvenido a Befine</ion-card-title>
