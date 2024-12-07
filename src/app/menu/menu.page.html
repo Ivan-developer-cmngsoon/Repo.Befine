@@ -10,67 +10,51 @@
     <!-- Título centrado -->
     <ion-title>MENÚ</ion-title>
 
-    <!-- Selector de "Filtrar" a la derecha -->
+    <!-- Selector de "Filtrar" a la derecha 
     <ion-buttons slot="end">
       <ion-item>
         <ion-select placeholder="Filtrar">
-          <ion-select-option>Más populares</ion-select-option>
-          <ion-select-option>Mejor precio</ion-select-option>
-          <ion-select-option>Promociones</ion-select-option>
-          <ion-select-option>Por categoría</ion-select-option>
+          <ion-select-option routerLink="/prod-dest">Productos Destacados</ion-select-option>
+          <ion-select-option routerLink="/recargas">Recargas</ion-select-option>
+          <ion-select-option routerLink="/packs">Packs</ion-select-option>
+          <ion-select-option routerLink="/promociones-esp">Promociones</ion-select-option>
         </ion-select>
       </ion-item>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card color="tertiary">
-    <ion-card-content>
-      <h3>¡Ahorra un 20% en tu próxima!</h3>
-      <p>invita a un familiar, amigo o conocido.</p>
-    </ion-card-content>
-  </ion-card>
-
-  <h2>Productos Destacados</h2>
-<ion-card>
-  <img src="assets/images/5x10recargas.jpg" alt="Dispensador Portátil">
-  <ion-card-content>
-    <ion-card-title>Recarga Económica</ion-card-title>
-    <p>¡Recarga Económica! La opción más accesible para tu hogar.</p>
-    <p>$10.000 CLP</p>
-    <ion-button color="primary" size="small">Agregar al carrito</ion-button>
-    <ion-button color="secondary" size="small" fill="outline">Comprar ahora</ion-button>
-  </ion-card-content>
-</ion-card>
-
-  <h2>Recargas de Agua</h2>
-  <div class="category-content">
-    <!-- Aquí irán los productos en cards -->
-    <ion-card>
-      <img src="assets/images/botellon.jpg" alt="Botellón de Agua">
-      <ion-card-content>
-        <ion-card-title>Botellón de Agua</ion-card-title>
-        <p>$50 MXN</p>
-        <ion-button color="primary" size="small">Agregar al carrito</ion-button>
-        <ion-button color="secondary" size="small" fill="outline">Comprar ahora</ion-button>
-      </ion-card-content>
-    </ion-card>
-    
+  <!-- Banner Promocional -->
+  <div class="promo-banner">
+    <p>💧 ¡Ahorra un 20% en tu próxima compra! Invita a un familiar, amigo o conocido. 💧</p>
   </div>
 
-  <h2>Packs y Dispensadores</h2>
-  <div class="category-content">
-    <!-- Aquí irán los productos en cards -->
-  </div>
-
-  <h2>Soluciones para Empresas</h2>
-  <div class="category-content">
-    <!-- Aquí irán los productos en cards -->
-  </div>
-
-  <h2>Promociones Especiales</h2>
-  <div class="category-content">
-    <!-- Aquí irán los productos en cards -->
+  <!-- Menú de botones -->
+  <div class="menu-container">
+    <button class="menu-btn" routerLink="/prod-dest">
+      <ion-icon name="star-outline"></ion-icon>
+      <span>Productos Destacados</span>
+    </button>
+    <button class="menu-btn" routerLink="/recargas">
+      <ion-icon name="water-outline"></ion-icon>
+      <span>Recargas de Agua</span>
+    </button>
+    <button class="menu-btn" routerLink="/packs">
+      <ion-icon name="cube-outline"></ion-icon>
+      <span>Packs y Dispensadores</span>
+    </button>
+    <button class="menu-btn" routerLink="/empresas">
+      <ion-icon name="business-outline"></ion-icon>
+      <span>Soluciones para Empresas</span>
+    </button>
+    <button class="menu-btn" routerLink="/promociones-esp">
+      <ion-icon name="pricetags-outline"></ion-icon>
+      <span>Promociones Especiales</span>
+    </button>
+    <button class="menu-btn" routerLink="/bidones-nuevos">
+      <ion-icon name="water-outline"></ion-icon>
+      <span>Bidones Nuevos</span>
+    </button>
   </div>
 </ion-content>

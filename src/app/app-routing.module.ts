@@ -31,6 +31,30 @@ const routes: Routes = [
     path: 'carrito',
     loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
   },
+  {
+    path: 'prod-dest',
+    loadChildren: () => import('./prod-dest/prod-dest.module').then( m => m.ProdDestPageModule)
+  },
+  {
+    path: 'recargas',
+    loadChildren: () => import('./recargas/recargas.module').then( m => m.RecargasPageModule)
+  },
+  {
+    path: 'packs',
+    loadChildren: () => import('./packs/packs.module').then( m => m.PacksPageModule)
+  },
+  {
+    path: 'empresas',
+    loadChildren: () => import('./empresas/empresas.module').then( m => m.EmpresasPageModule)
+  },
+  {
+    path: 'promociones-esp',
+    loadChildren: () => import('./promociones-esp/promociones-esp.module').then( m => m.PromocionesEspPageModule)
+  },
+  {
+    path: 'bidones-nuevos',
+    loadChildren: () => import('./bidones-nuevos/bidones-nuevos.module').then( m => m.BidonesNuevosPageModule)
+  },
 ];
 
 @NgModule({
