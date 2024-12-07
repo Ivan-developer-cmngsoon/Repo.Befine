@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botón de WhatsApp a la izquierda -->
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- Título centrado -->
+    <ion-title>MENÚ</ion-title>
+
+    <!-- Selector de "Filtrar" a la derecha -->
+    <ion-buttons slot="end">
+      <ion-item>
+        <ion-select placeholder="Filtrar">
+          <ion-select-option>Más populares</ion-select-option>
+          <ion-select-option>Mejor precio</ion-select-option>
+          <ion-select-option>Promociones</ion-select-option>
+          <ion-select-option>Por categoría</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="tertiary">
+    <ion-card-content>
+      <h3>¡Ahorra un 20% en tu próxima!</h3>
+      <p>invita a un familiar, amigo o conocido.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <h2>Productos Destacados</h2>
+<ion-card>
+  <img src="assets/images/5x10recargas.jpg" alt="Dispensador Portátil">
+  <ion-card-content>
+    <ion-card-title>Recarga Económica</ion-card-title>
+    <p>¡Recarga Económica! La opción más accesible para tu hogar.</p>
+    <p>$10.000 CLP</p>
+    <ion-button color="primary" size="small">Agregar al carrito</ion-button>
+    <ion-button color="secondary" size="small" fill="outline">Comprar ahora</ion-button>
+  </ion-card-content>
+</ion-card>
+
+  <h2>Recargas de Agua</h2>
+  <div class="category-content">
+    <!-- Aquí irán los productos en cards -->
+    <ion-card>
+      <img src="assets/images/botellon.jpg" alt="Botellón de Agua">
+      <ion-card-content>
+        <ion-card-title>Botellón de Agua</ion-card-title>
+        <p>$50 MXN</p>
+        <ion-button color="primary" size="small">Agregar al carrito</ion-button>
+        <ion-button color="secondary" size="small" fill="outline">Comprar ahora</ion-button>
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+
+  <h2>Packs y Dispensadores</h2>
+  <div class="category-content">
+    <!-- Aquí irán los productos en cards -->
+  </div>
+
+  <h2>Soluciones para Empresas</h2>
+  <div class="category-content">
+    <!-- Aquí irán los productos en cards -->
+  </div>
+
+  <h2>Promociones Especiales</h2>
+  <div class="category-content">
+    <!-- Aquí irán los productos en cards -->
+  </div>
+</ion-content>

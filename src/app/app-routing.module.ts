@@ -13,11 +13,6 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
-  // Ruta para la página de cupones
-  {
-    path: 'cupones',
-    loadChildren: () => import('./cupones/cupones.module').then(m => m.CuponesPageModule)
-  },
   // Ruta para la página de historial (mis pedidos)
   {
     path: 'historial',
@@ -27,6 +22,14 @@ const routes: Routes = [
   {
     path: 'cuenta',
     loadChildren: () => import('./cuenta/cuenta.module').then(m => m.CuentaPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'carrito',
+    loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
   },
 ];
 

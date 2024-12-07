@@ -13,13 +13,9 @@
     <!-- Botones a la derecha -->
     <ion-buttons slot="end">
       <!-- Botón para catálogo -->
-      <ion-button routerLink="/catalogo" fill="clear" color="primary">
+      <ion-button routerLink="/menu" fill="clear" color="primary">
         <ion-icon name="list-outline" slot="icon-only"></ion-icon>
-      </ion-button>
-      <!-- Botón para historial -->
-      <ion-button routerLink="/historial" fill="clear" color="primary">
-        <ion-icon name="clipboard-outline" slot="icon-only"></ion-icon>
-      </ion-button>
+      </ion-button>      
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -41,13 +37,14 @@
           <ion-item button (click)="realizarPedido()">
             <ion-label>Editar último pedido</ion-label>
           </ion-item>
-          <ion-item button (click)="mostrarMenu()">
+          <ion-item button routerLink="/menu">
             <ion-label>Ver menú</ion-label>
           </ion-item>
         </ion-list>
       </div>
     </ion-accordion>
   </ion-accordion-group>
+
 
 <!--Carrousel-->
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
