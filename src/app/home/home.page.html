@@ -1,13 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Inicio</ion-title>
+    <!-- Botón de WhatsApp a la izquierda -->
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <!-- Título centrado -->
+    <ion-title>BEFINE</ion-title>
+    
+    <!-- Botones a la derecha -->
     <ion-buttons slot="end">
-      <ion-button routerLink="/historial" color="primary">
-        <ion-icon name="water-outline" slot="icon-only"></ion-icon>
+      <!-- Botón para catálogo -->
+      <ion-button routerLink="/catalogo" fill="clear" color="primary">
+        <ion-icon name="list-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <!-- Botón para historial -->
+      <ion-button routerLink="/historial" fill="clear" color="primary">
+        <ion-icon name="clipboard-outline" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+
 
 <ion-content>
   <!-- Acordeón -->
@@ -22,22 +39,97 @@
             <ion-label>Repetir último pedido</ion-label>
           </ion-item>
           <ion-item button (click)="realizarPedido()">
-            <ion-label>Realizar nuevo pedido</ion-label>
+            <ion-label>Editar último pedido</ion-label>
           </ion-item>
           <ion-item button (click)="mostrarMenu()">
-            <ion-label>Menú</ion-label>
+            <ion-label>Ver menú</ion-label>
           </ion-item>
         </ion-list>
       </div>
     </ion-accordion>
   </ion-accordion-group>
 
+<!--Carrousel-->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/images/catalogo 24 befine.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/promos2_befine.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/promos3_befine.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  <!--Cards con varios items-->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Bienvenido a Befine</ion-card-title>
+      <ion-card-title>Encuentra el producto perfecto para ti</ion-card-title>
+      <ion-card-subtitle>Elige una opción y aprovecha nuestras promociones personalizadas</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      Encuentra promociones y gestiona tus pedidos de agua purificada desde aquí.
+      <ion-list>
+        <!-- Opción: Recargas Rápidas -->
+        <ion-item button routerLink="/recargas">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/planta_primeras.jpg" alt="Recargas Rápidas" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Recargas Rápidas</h2>
+            <p>¿Solo necesitas agua? Reponla en segundos.</p>
+          </ion-label>
+        </ion-item>
+  
+        <!-- Opción: Packs Completos -->
+        <ion-item button routerLink="/packs">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/pack_portada.jpg" alt="Packs Completos" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Packs Completos</h2>
+            <p>Dispensadores y bidones al mejor precio.</p>
+          </ion-label>
+        </ion-item>
+  
+        <!-- Opción: Soluciones para Empresas -->
+        <ion-item button routerLink="/empresas">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/pack_portada.jpg" alt="Soluciones para Empresas" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Soluciones Empresariales</h2>
+            <p>Abastece tu oficina con nuestros paquetes exclusivos.</p>
+          </ion-label>
+        </ion-item>
+  
+        <!-- Opción: Promociones Especiales -->
+        <ion-item button routerLink="/promociones" lines="none">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/Adulto_mayor_2k.jpg" alt="Promociones Especiales" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Promociones Especiales</h2>
+            <p>Ofertas por tiempo limitado, ¡aprovéchalas!</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
+  
 </ion-content>
