@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular'; // Importar NavController
 
 @Component({
   selector: 'app-recargas',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecargasPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) {} // Inyectar NavController
 
   ngOnInit() {
   }
 
+  // Función para volver a la página anterior
+  goBack() {
+    this.navCtrl.back(); // Navegar a la página anterior
+  }
 }

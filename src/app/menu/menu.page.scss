@@ -1,96 +1,67 @@
-/* Contenedor del menú radial */
-.radial-menu {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 50px auto;
+/* Contenedor del menú */
+.menu-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px; /* Espacio entre botones */
+  padding: 16px;
+  opacity: 0; /* Ocultar al inicio */
+  transform: translateY(20px); /* Posición inicial desplazada */
+  animation: fade-slide-in 0.6s ease-out forwards; /* Animación al cargar */
 }
 
-.main-btn {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, #007bff, #00d4ff);
-  border: none;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 24px;
+/* Botones del menú */
+.menu-btn {
   display: flex;
-  justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: flex-start; /* Ícono y texto alineados a la izquierda */
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #003973, #00509e); /* Degradado azul semi oscuro */
+  border: none;
+  border-radius: 8px; /* Botones con esquinas redondeadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+  color: white; /* Texto en blanco */
+  font-size: 1.2rem; /* Tamaño del texto */
+  font-weight: bold;
   cursor: pointer;
-  animation: pulse 2s infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  background-size: 200% 200%; /* Para movimiento dinámico del degradado */
+  animation: gradient-move 3s ease infinite; /* Animación del fondo */
 }
 
-.main-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+/* Ícono dentro del botón */
+.menu-btn ion-icon {
+  font-size: 1.5rem; /* Tamaño del ícono */
+  margin-right: 12px; /* Espacio entre el ícono y el texto */
 }
 
-.radial-btn {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(45deg, #00c6ff, #0072ff);
-  border: none;
-  border-radius: 50%;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  cursor: pointer;
-  animation: color-shift 5s infinite;
+/* Efecto de hover */
+.menu-btn:hover {
+  transform: translateY(-2px); /* Movimiento sutil hacia arriba */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
 }
 
-.radial-btn ion-icon {
-  font-size: 24px;
-}
-
-.radial-btn span {
-  position: absolute;
-  bottom: -20px;
-  font-size: 0.7rem;
-  color: #333;
-}
-
-.radial-btn:hover {
-  background: linear-gradient(45deg, #ffd700, #ffa500);
-}
-
-.radial-menu.open .radial-btn {
-  opacity: 1;
-  transform: translate(calc(100px * cos(var(--angle))), calc(100px * sin(var(--angle))));
-}
-
-/* Animaciones */
-@keyframes pulse {
+/* Animación de fondo gradiente dinámico */
+@keyframes gradient-move {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 255, 0.5);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(0, 150, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 150, 255, 0);
-  }
-}
-
-@keyframes color-shift {
-  0% {
-    background: #007bff;
+    background-position: 0% 50%;
   }
   50% {
-    background: #002770;
+    background-position: 100% 50%;
   }
   100% {
-    background: #007bff;
+    background-position: 0% 50%;
+  }
+}
+
+/* Animación de fade-in y slide-in */
+@keyframes fade-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Desplazado hacia abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Posición final */
   }
 }
