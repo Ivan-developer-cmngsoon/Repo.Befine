@@ -1,54 +1,96 @@
-/* Banner promocional */
-.promo-banner {
-    background: #0062a3;
-    padding: 16px;
-    text-align: center;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 8px;
-    margin: 16px;
-    font-size: 1rem;
+/* Contenedor del menú radial */
+.radial-menu {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.radial-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+  animation: color-shift 5s infinite;
+}
+
+.radial-btn ion-icon {
+  font-size: 24px;
+}
+
+.radial-btn span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.7rem;
+  color: #333;
+}
+
+.radial-btn:hover {
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+}
+
+.radial-menu.open .radial-btn {
+  opacity: 1;
+  transform: translate(calc(100px * cos(var(--angle))), calc(100px * sin(var(--angle))));
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 255, 0.5);
   }
-  
-  /* Contenedor del menú */
-  .menu-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 16px;
+  70% {
+    box-shadow: 0 0 0 20px rgba(0, 150, 255, 0);
   }
-  
-  /* Botones del menú */
-  .menu-btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 12px;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-    transition: background 0.3s ease, transform 0.2s ease;
-    text-align: left;
-    gap: 12px;
-    cursor: pointer;
-    width: 100%;
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 255, 0);
   }
-  
-  .menu-btn ion-icon {
-    font-size: 1.5rem;
-    color: #007bff;
+}
+
+@keyframes color-shift {
+  0% {
+    background: #007bff;
   }
-  
-  .menu-btn span {
-    flex-grow: 1;
+  50% {
+    background: #002770;
   }
-  
-  .menu-btn:hover {
-    background: #f4f4f4;
-    transform: scale(1.02);
+  100% {
+    background: #007bff;
   }
-  
+}
