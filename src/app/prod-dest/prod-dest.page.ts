@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-prod-dest',
   templateUrl: './prod-dest.page.html',
   styleUrls: ['./prod-dest.page.scss'],
 })
-export class ProdDestPage implements OnInit {
+export class ProdDestPage {
+  constructor(private navCtrl: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  goBack() {
+    this.navCtrl.back(); // Navegar a la página anterior
   }
 
+  addToCart(product: string) {
+    console.log(`${product} añadido al carrito`);
+    alert(`${product} ha sido añadido al carrito.`);
+  }
 }
