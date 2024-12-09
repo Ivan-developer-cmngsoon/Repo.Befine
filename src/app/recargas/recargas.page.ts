@@ -40,12 +40,11 @@ export class RecargasPage implements OnInit {
     } else if (this.quantity === 4) {
       this.totalPrice = 9000;
     } else {
-      this.totalPrice = 9000 + (this.quantity - 4) * 2000; // 2000 por cada recarga adicional
+      this.totalPrice = 8000 + (this.quantity - 4) * 2000; // 2000 por cada recarga adicional
     }
   }
 
   buyNow() {
-    // Aquí puedes manejar la acción de "Comprar"
     console.log(`Compra realizada con ${this.quantity} recargas por un total de ${this.totalPrice} CLP.`);
     alert(`¡Gracias por tu compra! Total: ${this.totalPrice} CLP`);
   }

@@ -19,45 +19,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-toolbar>
-    <ion-title size="large">Recargas</ion-title>
-  </ion-toolbar>
+  <!-- Encabezado del Producto -->
+  <div class="product-header">
+    <h1 class="product-title">Recarga de Agua</h1>
+  </div>
 
-  <!-- Card de Recargas -->
-  <ion-card>
+  <!-- Imagen del Producto -->
+  <div class="product-image">
     <img src="assets/images/catalogo 24 befine.jpg" alt="Recarga de Agua">
-    <ion-card-content>
-      <ion-card-title>Recarga de Agua</ion-card-title>
-      <p>¡Elige la cantidad que necesitas para tu hogar o negocio!</p>
+  </div>
 
-      <!-- Controles de cantidad -->
-      <div class="quantity-container">
-        <!-- Botón de Restar -->
-        <ion-button fill="outline" color="primary" (click)="decreaseQuantity()">
-          <ion-icon name="remove-outline"></ion-icon>
-        </ion-button>
+  <!-- Controles de cantidad -->
+  <div class="quantity-container">
+    <!-- Botón de Restar -->
+    <ion-button fill="outline" color="primary" (click)="decreaseQuantity()">
+      <ion-icon name="remove-outline"></ion-icon>
+    </ion-button>
 
-        <!-- Mostrar Cantidad -->
-        <span class="quantity">{{ quantity }}</span>
+    <!-- Mostrar Cantidad -->
+    <span class="quantity">{{ quantity }}</span>
 
-        <!-- Botón de Sumar -->
-        <ion-button fill="outline" color="primary" (click)="increaseQuantity()">
-          <ion-icon name="add-outline"></ion-icon>
-        </ion-button>
-      </div>
+    <!-- Botón de Sumar -->
+    <ion-button fill="outline" color="primary" (click)="increaseQuantity()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </div>
 
-     <!-- Sección de Precio Total -->
-    <div class="price-container">
-      <p class="price-label">Total:</p>
-      <p class="price-value"><strong>{{ totalPrice | currency:'$':'symbol':'1.0-0' }}</strong></p>
-    </div>
+  <!-- Precio Total -->
+  <div class="price-container">
+    <p class="price-value">{{ totalPrice | currency:'CLP':'symbol':'1.0-0' }}</p>
+  </div>
 
-    <!-- Botón Comprar -->
-    <button class="custom-btn" (click)="buyNow()">
-      <ion-icon name="cart-outline"></ion-icon>
-      Comprar
-    </button>
-
-    </ion-card-content>
-  </ion-card>
+  <!-- Botones de acción -->
+<div class="actions-container">
+  <ion-button class="custom-cart-btn" expand="block" (click)="buyNow()">Añadir al carrito</ion-button>
+</div>
 </ion-content>
