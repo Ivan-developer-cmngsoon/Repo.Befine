@@ -1,0 +1,128 @@
+/* General Styles */
+.product-card {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Product Header */
+  .product-header {
+    text-align: center;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  
+  .product-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00509e;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Product Badge */
+  .product-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popular {
+    background: #ff5252; /* Red for popular products */
+  }
+  
+  .oferta {
+    background: #ff9800; /* Orange for offers */
+  }
+  
+  .exclusivo {
+    background: #9c27b0; /* Purple for exclusives */
+  }
+  
+  /* Product Image */
+  .product-image {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Product Details */
+  .product-details {
+    text-align: center;
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  /* Price Container */
+  .price-container {
+    text-align: center;
+    margin: 8px 0;
+  }
+  
+  .price-value {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #007bff; /* Highlighted blue */
+  }
+  
+  /* Actions Container */
+  .actions-container {
+    margin-top: 12px;
+  }
+  
+  .custom-cart-btn {
+    background: linear-gradient(90deg, #003973, #00509e);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .custom-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Backgrounds for Differentiation */
+  .product-electric-compressor {
+    background: linear-gradient(90deg, #f3e5f5, #ede7f6); /* Light purple gradient */
+  }
+  
+  .product-electric-ventilated {
+    background: linear-gradient(90deg, #e3f2fd, #bbdefb); /* Light blue gradient */
+  }
+  
+  .product-inicial {
+    background: linear-gradient(90deg, #fffde7, #ffebee); /* Light yellow/pink gradient */
+  }
+  
+  .product-compressor,
+  .product-ventilated,
+  .product-usb,
+  .product-ambiental {
+    background: linear-gradient(90deg, #f9fbe7, #f3f7e7); /* Light greenish gradient */
+  }
+  

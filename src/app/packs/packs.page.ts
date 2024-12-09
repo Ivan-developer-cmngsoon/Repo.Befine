@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-packs',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./packs.page.scss'],
 })
 export class PacksPage implements OnInit {
+  constructor(private navCtrl: NavController) {} // Inyectar NavController
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  // Función para volver a la página anterior
+  goBack() {
+    this.navCtrl.back(); // Navegar a la página anterior
   }
 
+  // Función para añadir productos al carrito
+  addToCart(product: string) {
+    console.log(`${product} añadido al carrito.`);
+    alert(`¡${product} ha sido añadido al carrito!`);
+  }
 }
