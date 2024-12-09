@@ -6,11 +6,18 @@
         <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
-
     <!-- Título centrado -->
     <ion-title>MENÚ</ion-title>
+
+    <!-- Botón de volver a la derecha -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <!-- Botón central y menú circular -->
