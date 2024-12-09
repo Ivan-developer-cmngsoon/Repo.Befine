@@ -1,0 +1,77 @@
+/* Imagen del producto */
+ion-card img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Contenedor de los botones y cantidad */
+  .quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  /* Estilo para el número de cantidad */
+  .quantity {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Contenedor para el precio */
+  .price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+    padding: 8px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .price-label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .price-value {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+ /* Botón Comprar */
+.custom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espacio entre el ícono y el texto */
+    background: #003973; /* Color azul oscuro */
+    color: #fff; /* Texto blanco */
+    font-size: 1.2rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    padding: 12px 24px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Manito al pasar el mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  /* Hover del botón */
+  .custom-btn:hover {
+    transform: translateY(-2px); /* Elevar ligeramente */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    background: #00509e; /* Cambiar a un azul más claro */
+  }
+  
+  /* Ícono dentro del botón */
+  .custom-btn ion-icon {
+    font-size: 1.5rem; /* Tamaño del ícono */
+  }
+  
+  
