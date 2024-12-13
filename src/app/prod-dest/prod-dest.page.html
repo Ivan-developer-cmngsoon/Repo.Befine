@@ -7,7 +7,7 @@
       </ion-button>
     </ion-buttons>
     <!-- Título centrado -->
-    <ion-title>PACKS Y DISPENSADORES</ion-title>
+    <ion-title>PRODUCTOS DESTACADOS</ion-title>
 
     <!-- Botón de volver a la derecha -->
     <ion-buttons slot="end">
@@ -19,43 +19,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Pack Eléctricos Compresor -->
-  <div class="product-card product-electric-compressor">
+  <!-- Recarga Económica -->
+  <div class="product-card product-economica">
     <div class="product-header">
-      <h1 class="product-title">Pack Eléctricos Compresor</h1>
-      <span class="product-badge exclusivo">¡Exclusivo!</span>
+      <h1 class="product-title">Recarga Económica</h1>
+      <span class="product-badge popular">¡Más Vendido!</span>
     </div>
     <div class="product-image">
-      <img src="assets/images/pack-electric-compressor.jpg" alt="Pack Eléctricos Compresor">
+      <img src="assets/images/5x10recargas.jpg" alt="Recarga Económica">
     </div>
     <div class="product-details">
-      <p>1 Dispensador eléctrico con compresor + 3 recargas de agua.</p>
+      <p>5 recargas de agua de 20 litros por $10.000, ¡ahorra $2.500!</p>
     </div>
     <div class="price-container">
-      <p class="price-value">$120.000</p>
+      <p class="price-value">$10.000</p>
     </div>
     <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Eléctricos Compresor')">Añadir al carrito</ion-button>
-    </div>
-  </div>
-
-  <!-- Pack Eléctricos Ventilados -->
-  <div class="product-card product-electric-ventilated">
-    <div class="product-header">
-      <h1 class="product-title">Pack Eléctricos Ventilados</h1>
-      <span class="product-badge oferta">¡Oferta!</span>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/pack-electric-ventilated.jpg" alt="Pack Eléctricos Ventilados">
-    </div>
-    <div class="product-details">
-      <p>1 Dispensador eléctrico ventilado + 3 recargas de agua.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$110.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Eléctricos Ventilados')">Añadir al carrito</ion-button>
+      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Recarga Económica')">Añadir al carrito</ion-button>
     </div>
   </div>
 
@@ -63,13 +43,13 @@
   <div class="product-card product-inicial">
     <div class="product-header">
       <h1 class="product-title">Pack Inicial</h1>
-      <span class="product-badge popular">¡Más Vendido!</span>
+      <span class="product-badge oferta">¡Oferta!</span>
     </div>
     <div class="product-image">
-      <img src="assets/images/pack-inicial.jpg" alt="Pack Inicial">
+      <img src="assets/images/promos2_befine.jpg" alt="Pack Inicial">
     </div>
     <div class="product-details">
-      <p>1 Dispensador USB o ambiental + 3 recargas de agua.</p>
+      <p>1 Dispensador USB o ambiental + 3 recargas de agua con envases incluidos.</p>
     </div>
     <div class="price-container">
       <p class="price-value">$18.000</p>
@@ -79,79 +59,23 @@
     </div>
   </div>
 
-  <!-- Dispensador Compresor -->
-  <div class="product-card product-compressor">
+  <!-- Pack Premium -->
+  <div class="product-card product-premium">
     <div class="product-header">
-      <h1 class="product-title">Dispensador Compresor</h1>
+      <h1 class="product-title">Pack Premium</h1>
+      <span class="product-badge exclusivo">¡Exclusivo!</span>
     </div>
     <div class="product-image">
-      <img src="assets/images/dispensador-compressor.jpg" alt="Dispensador Compresor">
+      <img src="assets/images/promos_befine.jpg" alt="Pack Premium">
     </div>
     <div class="product-details">
-      <p>Dispensador eléctrico con compresor para agua fría/caliente.</p>
+      <p>1 Dispensador eléctrico de agua fría/caliente + 3 recargas de agua con envases incluidos.</p>
     </div>
     <div class="price-container">
-      <p class="price-value">$90.000</p>
+      <p class="price-value">$115.000</p>
     </div>
     <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador Compresor')">Añadir al carrito</ion-button>
-    </div>
-  </div>
-
-  <!-- Dispensador Ventilado -->
-  <div class="product-card product-ventilated">
-    <div class="product-header">
-      <h1 class="product-title">Dispensador Ventilado</h1>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/dispensador-ventilado.jpg" alt="Dispensador Ventilado">
-    </div>
-    <div class="product-details">
-      <p>Dispensador eléctrico ventilado para agua fría.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$80.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador Ventilado')">Añadir al carrito</ion-button>
-    </div>
-  </div>
-
-  <!-- Dispensador USB -->
-  <div class="product-card product-usb">
-    <div class="product-header">
-      <h1 class="product-title">Dispensador USB</h1>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/dispensador-usb.jpg" alt="Dispensador USB">
-    </div>
-    <div class="product-details">
-      <p>Dispensador USB portátil, fácil de usar y transportar.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$15.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador USB')">Añadir al carrito</ion-button>
-    </div>
-  </div>
-
-  <!-- Dispensador Ambiental -->
-  <div class="product-card product-ambiental">
-    <div class="product-header">
-      <h1 class="product-title">Dispensador Ambiental</h1>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/dispensador-ambiental.jpg" alt="Dispensador Ambiental">
-    </div>
-    <div class="product-details">
-      <p>Dispensador ambiental para agua a temperatura ambiente.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$10.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador Ambiental')">Añadir al carrito</ion-button>
+      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Premium')">Añadir al carrito</ion-button>
     </div>
   </div>
 </ion-content>
