@@ -2,12 +2,12 @@
   <ion-toolbar>
     <!-- Botón de WhatsApp a la izquierda -->
     <ion-buttons slot="start">
-      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
+      <ion-button fill="solid" color="success" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
         <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
     <!-- Título centrado -->
-    <ion-title>PRODUCTOS DESTACADOS</ion-title>
+    <ion-title>PROMOCIONES ESPECIALES</ion-title>
 
     <!-- Botón de volver a la derecha -->
     <ion-buttons slot="end">
@@ -19,63 +19,81 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Recarga Económica -->
-  <div class="product-card product-economica">
-    <div class="product-header">
-      <h1 class="product-title">Recarga Económica</h1>
-      <span class="product-badge popular">¡Más Vendido!</span>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/5x10recargas.jpg" alt="Recarga Económica">
-    </div>
-    <div class="product-details">
-      <p>5 recargas de agua de 20 litros por $10.000, ¡ahorra $2.500!</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$10.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Recarga Económica')">Añadir al carrito</ion-button>
-    </div>
+  <!-- Encabezado de la categoría -->
+  <div class="category-header">
+    <h2>Ofertas Destacadas</h2>
   </div>
 
-  <!-- Pack Inicial -->
-  <div class="product-card product-inicial">
-    <div class="product-header">
-      <h1 class="product-title">Pack Inicial</h1>
-      <span class="product-badge oferta">¡Oferta!</span>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/promos2_befine.jpg" alt="Pack Inicial">
-    </div>
-    <div class="product-details">
-      <p>1 Dispensador USB o ambiental + 3 recargas de agua con envases incluidos.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$18.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Inicial')">Añadir al carrito</ion-button>
-    </div>
+  <!-- Pack Familiar -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pack Familiar</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="assets/images/promos1_befine.jpg" alt="Pack Familiar" />
+          </ion-thumbnail>
+          <ion-label>
+            <p>Incluye 3 recargas de agua + 1 dispensador portátil.</p>
+            <strong>$25.000</strong>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" (click)="addToCart('Pack Familiar')">Añadir al carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Encabezado de otra categoría -->
+  <div class="category-header">
+    <h2>Promociones Empresariales</h2>
+  </div>
+
+  <!-- Pack Empresarial -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pack Empresarial</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="assets/images/promos2_befine.jpg" alt="Pack Empresarial" />
+          </ion-thumbnail>
+          <ion-label>
+            <p>Incluye dispensador frío/caliente + 5 recargas.</p>
+            <strong>$80.000</strong>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" (click)="addToCart('Pack Empresarial')">Añadir al carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Encabezado de otra categoría -->
+  <div class="category-header">
+    <h2>Paquetes Premium</h2>
   </div>
 
   <!-- Pack Premium -->
-  <div class="product-card product-premium">
-    <div class="product-header">
-      <h1 class="product-title">Pack Premium</h1>
-      <span class="product-badge exclusivo">¡Exclusivo!</span>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/promos_befine.jpg" alt="Pack Premium">
-    </div>
-    <div class="product-details">
-      <p>1 Dispensador eléctrico de agua fría/caliente + 3 recargas de agua con envases incluidos.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$115.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Premium')">Añadir al carrito</ion-button>
-    </div>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pack Premium</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="assets/images/promos3_befine.jpg" alt="Pack Premium" />
+          </ion-thumbnail>
+          <ion-label>
+            <p>Dispensador eléctrico con compresor y 3 recargas.</p>
+            <strong>$120.000</strong>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" (click)="addToCart('Pack Premium')">Añadir al carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
