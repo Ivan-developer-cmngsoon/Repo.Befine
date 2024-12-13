@@ -1,0 +1,97 @@
+/* Tarjeta de Producto */
+.product-card {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-header {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  .product-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00509e;
+  }
+  
+  .product-badge {
+    display: inline-block;
+    background-color: #ff9800;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    margin: 16px 0;
+  }
+  
+  .product-details {
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  
+  .price-container {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 16px;
+  }
+  
+  /* Botones de Acción */
+  .actions-container ion-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* Sección de Contacto */
+  .contact-section {
+    margin: 16px;
+    padding: 16px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-title {
+    font-size: 1.6rem;
+    color: #388e3c;
+    margin-bottom: 8px;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px; /* Espacio entre botones */
+  }
+  
+  .contact-buttons ion-button {
+    font-size: 1.5rem;
+  }
+  
