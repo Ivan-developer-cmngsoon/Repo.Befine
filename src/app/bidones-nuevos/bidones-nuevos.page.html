@@ -6,6 +6,7 @@
         <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
+
     <!-- Título centrado -->
     <ion-title>BIDONES NUEVOS</ion-title>
 
@@ -18,46 +19,48 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <!-- Encabezado del Producto -->
   <div class="product-header">
-    <h1 class="product-title">Bidón de Agua 20L</h1>
-    <span class="product-badge popular">¡Recién Llegado!</span>
+    <h1 class="product-title">{{ product.name }}</h1>
+    <span class="product-badge" *ngIf="product.tags && product.tags.length > 0">
+      {{ product.tags[0] }}
+    </span>
+    
   </div>
 
   <!-- Imagen del Producto -->
   <div class="product-image">
-    <img src="assets/images/promos3_befine.jpg" alt="Bidón de Agua 20L">
+    <ion-img [src]="product.imageUrl" [alt]="product.name"></ion-img>
   </div>
 
   <!-- Descripción del Producto -->
   <div class="product-details">
-    <p>Bidón de agua nuevo de 20 litros, ideal para el hogar y oficina.</p>
+    <p>{{ product.description }}</p>
   </div>
 
   <!-- Controles de cantidad -->
-  <div class="quantity-container">
-    <!-- Botón de Restar -->
-    <ion-button fill="outline" color="primary" (click)="decreaseQuantity()">
+  <div class="quantity-container ion-text-center">
+    <ion-button fill="outline" color="primary" (click)="decreaseQuantity()" aria-label="Disminuir cantidad">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
 
-    <!-- Mostrar Cantidad -->
     <span class="quantity">{{ quantity }}</span>
 
-    <!-- Botón de Sumar -->
-    <ion-button fill="outline" color="primary" (click)="increaseQuantity()">
+    <ion-button fill="outline" color="primary" (click)="increaseQuantity()" aria-label="Aumentar cantidad">
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </div>
 
   <!-- Precio Total -->
-  <div class="price-container">
+  <div class="price-container ion-text-center">
     <p class="price-value">{{ totalPrice | currency:'$':'symbol':'1.0-0' }}</p>
   </div>
 
-  <!-- Botones de acción -->
-  <div class="actions-container">
-    <ion-button class="custom-cart-btn" expand="block" (click)="buyNow()">Añadir al carrito</ion-button>
+  <!-- Botón de acción -->
+  <div class="actions-container ion-padding">
+    <ion-button expand="block" color="primary" (click)="addToCart()">
+      Añadir al carrito
+    </ion-button>
   </div>
 </ion-content>
