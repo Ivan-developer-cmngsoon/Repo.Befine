@@ -18,29 +18,53 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <!-- Producto -->
-  <div class="product-card product-empresas">
+  <div class="product-card product-empresas ion-text-center">
     <div class="product-header">
-      <h1 class="product-title">Recargas para Empresas</h1>
-      <span class="product-badge exclusivo">¡Exclusivo!</span>
+      <h1 class="product-title">{{ product.name }}</h1>
+      <span class="product-badge exclusivo" *ngIf="product.tags && product.tags.length > 0">
+        {{ product.tags[0] }}
+      </span>
+      
     </div>
+
+    <!-- Imagen del Producto -->
     <div class="product-image">
-      <img src="assets/images/empresas_befine.jpg" alt="Recargas para Empresas">
+      <img [src]="product.imageUrl" [alt]="product.name" />
     </div>
+
+    <!-- Descripción del Producto -->
     <div class="product-details">
-      <p>Incluye dispensadores y recargas personalizadas para empresas.</p>
+      <p>{{ product.description }}</p>
     </div>
+
+    <!-- Controles de cantidad -->
+    <div class="quantity-controls ion-text-center">
+      <ion-button fill="outline" color="primary" (click)="decreaseQuantity()">
+        <ion-icon name="remove-outline"></ion-icon>
+      </ion-button>
+      <span class="quantity">{{ quantity }}</span>
+      <ion-button fill="outline" color="primary" (click)="increaseQuantity()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Precio Total -->
     <div class="price-container">
-      <p class="price-value">$120.000</p>
+      <p class="price-value">Total: <strong>${{ totalPrice }}</strong></p>
     </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Recargas para Empresas')">Añadir al carrito</ion-button>
+
+    <!-- Botón para añadir al carrito -->
+    <div class="actions-container ion-padding">
+      <ion-button expand="block" color="primary" (click)="addToCart()">
+        Añadir al carrito
+      </ion-button>
     </div>
   </div>
 
   <!-- Sección de Contacto -->
-  <div class="contact-section">
+  <div class="contact-section ion-text-center ion-padding">
     <h2 class="contact-title">Contáctanos</h2>
     <p class="contact-description">¿Necesitas un plan personalizado? Escríbenos:</p>
     <div class="contact-buttons">
@@ -50,7 +74,7 @@
       </ion-button>
       <!-- Botón de Gmail -->
       <ion-button fill="solid" color="danger" href="mailto:befine.cl@gmail.com" target="_blank">
-        <ion-icon name="mail-outline" slot="icon-only"></ion-icon>
+        <ion-icon name="mail-outline"></ion-icon>
       </ion-button>
     </div>
   </div>

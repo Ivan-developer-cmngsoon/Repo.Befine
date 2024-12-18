@@ -1,157 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <!-- Botón de WhatsApp a la izquierda -->
     <ion-buttons slot="start">
-      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
-        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <!-- Título centrado -->
-    <ion-title>PACKS Y DISPENSADORES</ion-title>
-
-    <!-- Botón de volver a la derecha -->
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="goBack()">
+      <ion-button fill="clear" color="primary" (click)="goBack()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-title>PACKS Y DISPENSADORES</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <!-- Pack Eléctricos Compresor -->
-  <div class="product-card product-electric-compressor">
-    <div class="product-header">
-      <h1 class="product-title">Pack Eléctricos Compresor</h1>
-      <span class="product-badge exclusivo">¡Exclusivo!</span>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/promos_befine.jpg" alt="Pack Eléctricos Compresor">
-    </div>
-    <div class="product-details">
-      <p>1 Dispensador eléctrico con compresor + 3 recargas de agua.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$120.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Eléctricos Compresor')">Añadir al carrito</ion-button>
-    </div>
-  </div>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Lista de productos -->
+  <ion-card *ngFor="let item of products; let i = index" class="product-card">
+    <!-- Encabezado del Producto -->
+    <ion-card-header>
+      <ion-card-title>{{ item.product.name }}</ion-card-title>
+      <p>{{ item.product.description }}</p>
+    </ion-card-header>
 
-  <!-- Pack Eléctricos Ventilados -->
-  <div class="product-card product-electric-ventilated">
-    <div class="product-header">
-      <h1 class="product-title">Pack Eléctricos Ventilados</h1>
-      <span class="product-badge oferta">¡Oferta!</span>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/promos_befine.jpg" alt="Pack Eléctricos Ventilados">
-    </div>
-    <div class="product-details">
-      <p>1 Dispensador eléctrico ventilado + 3 recargas de agua.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$110.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Eléctricos Ventilados')">Añadir al carrito</ion-button>
-    </div>
-  </div>
+    <!-- Imagen -->
+    <img [src]="item.product.imageUrl" [alt]="item.product.name" />
 
-  <!-- Pack Inicial -->
-  <div class="product-card product-inicial">
-    <div class="product-header">
-      <h1 class="product-title">Pack Inicial</h1>
-      <span class="product-badge popular">¡Más Vendido!</span>
+    <!-- Controles de cantidad -->
+    <div class="quantity-controls ion-text-center">
+      <ion-button fill="outline" color="primary" (click)="decreaseQuantity(i)">
+        <ion-icon name="remove-outline"></ion-icon>
+      </ion-button>
+      <span>{{ item.quantity }}</span>
+      <ion-button fill="outline" color="primary" (click)="increaseQuantity(i)">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
     </div>
-    <div class="product-image">
-      <img src="assets/images/promos2_befine.jpg" alt="Pack Inicial">
-    </div>
-    <div class="product-details">
-      <p>1 Dispensador USB o ambiental + 3 recargas de agua.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$18.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Pack Inicial')">Añadir al carrito</ion-button>
-    </div>
-  </div>
 
-  <!-- Dispensador Compresor -->
-  <div class="product-card product-compressor">
-    <div class="product-header">
-      <h1 class="product-title">Dispensador Compresor</h1>
+    <!-- Precio Total -->
+    <div class="price-container ion-text-center">
+      <p>Total: <strong>${{ item.totalPrice }}</strong></p>
     </div>
-    <div class="product-image">
-      <img src="assets/images/promos_befine.jpg" alt="Dispensador Compresor">
-    </div>
-    <div class="product-details">
-      <p>Dispensador eléctrico con compresor para agua fría/caliente.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$90.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador Compresor')">Añadir al carrito</ion-button>
-    </div>
-  </div>
 
-  <!-- Dispensador Ventilado -->
-  <div class="product-card product-ventilated">
-    <div class="product-header">
-      <h1 class="product-title">Dispensador Ventilado</h1>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/promos_befine.jpg" alt="Dispensador Ventilado">
-    </div>
-    <div class="product-details">
-      <p>Dispensador eléctrico ventilado para agua fría.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$80.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador Ventilado')">Añadir al carrito</ion-button>
-    </div>
-  </div>
-
-  <!-- Dispensador USB -->
-  <div class="product-card product-usb">
-    <div class="product-header">
-      <h1 class="product-title">Dispensador USB</h1>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/catalogo_befine.jpg" alt="Dispensador USB">
-    </div>
-    <div class="product-details">
-      <p>Dispensador USB portátil, fácil de usar y transportar.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$15.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador USB')">Añadir al carrito</ion-button>
-    </div>
-  </div>
-
-  <!-- Dispensador Ambiental -->
-  <div class="product-card product-ambiental">
-    <div class="product-header">
-      <h1 class="product-title">Dispensador Ambiental</h1>
-    </div>
-    <div class="product-image">
-      <img src="assets/images/catalogo_befine.jpg" alt="Dispensador Ambiental">
-    </div>
-    <div class="product-details">
-      <p>Dispensador ambiental para agua a temperatura ambiente.</p>
-    </div>
-    <div class="price-container">
-      <p class="price-value">$10.000</p>
-    </div>
-    <div class="actions-container">
-      <ion-button class="custom-cart-btn" expand="block" (click)="addToCart('Dispensador Ambiental')">Añadir al carrito</ion-button>
-    </div>
-  </div>
+    <!-- Botón para añadir al carrito -->
+    <ion-button expand="block" color="success" (click)="addToCart(i)">
+      Añadir al carrito
+    </ion-button>
+  </ion-card>
 </ion-content>

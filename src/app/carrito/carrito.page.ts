@@ -36,11 +36,11 @@ export class CarritoPage implements OnInit {
   }
 
   /**
-   * Elimina un producto específico del carrito.
-   * @param productName Nombre del producto a eliminar
+   * Elimina un producto específico del carrito por ID.
+   * @param productId ID del producto a eliminar
    */
-  removeFromCart(productName: string): void {
-    this.cartService.removeFromCart(productName); // Eliminar producto
+  removeFromCart(productId: string): void {
+    this.cartService.removeFromCart(productId); // Eliminar producto usando el ID
     this.loadCart(); // Recargar carrito y total
   }
 
@@ -71,5 +71,4 @@ export class CarritoPage implements OnInit {
       alert('El carrito está vacío. No hay nada que pagar.');
     }
   }
-  
 }
