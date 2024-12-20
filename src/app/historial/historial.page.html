@@ -1,18 +1,63 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Mis Pedidos</ion-title>
+    <ion-title>Historial de Pedidos</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label>Pedido #001 - 2 garrafones</ion-label>
-      <ion-note slot="end">Entregado</ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pedido #002 - 5 garrafones</ion-label>
-      <ion-note slot="end">En camino</ion-note>
+<ion-content class="ion-padding">
+  <!-- Mostrar mensaje si no hay pedidos -->
+  <div *ngIf="orders.length === 0" class="empty-state ion-text-center">
+    <ion-icon name="file-tray-outline" size="large"></ion-icon>
+    <p>No tienes pedidos en tu historial.</p>
+    <ion-button fill="outline" color="primary" routerLink="/menu">
+      Explorar Productos
+    </ion-button>
+  </div>
+
+  <!-- Último Pedido -->
+<div *ngIf="orders.length > 0" class="last-order">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Último Pedido</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>ID del Pedido:</strong> {{ lastOrder.id }}</p>
+      <p><strong>Fecha:</strong> {{ lastOrder.date }}</p>
+      <p><strong>Total:</strong> ${{ lastOrder.total }}</p>
+      <p [ngClass]="getOrderStatusClass(lastOrder.status)">
+        <strong>Estado:</strong> {{ lastOrder.status }}
+      </p>
+      <div class="actions">
+        <ion-button fill="clear" color="primary" (click)="viewOrderDetails(lastOrder)">
+          Ver Detalles
+        </ion-button>
+        <ion-button fill="solid" color="primary" (click)="repeatOrder(lastOrder)">
+          Repetir Pedido
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+  <!-- Historial de Pedidos -->
+  <ion-list *ngIf="orders.length > 1" class="order-history">
+    <ion-list-header>
+      <ion-label>Historial Anterior</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let order of orders.slice(1)">
+      <ion-label>
+        <p>{{ order.date }}</p>
+        <p [ngClass]="getOrderStatusClass(order.status)">{{ order.status }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="primary" (click)="viewOrderDetails(order)">
+        <ion-icon name="eye-outline"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -55,6 +55,14 @@ const routes: Routes = [
     path: 'bidones-nuevos',
     loadChildren: () => import('./bidones-nuevos/bidones-nuevos.module').then( m => m.BidonesNuevosPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'recover-password',
+    loadChildren: () => import('./recover-password/recover-password.module').then( m => m.RecoverPasswordPageModule)
+  },
 ];
 
 @NgModule({
