@@ -1,28 +1,32 @@
 <ion-app>
   <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home" routerLink="/home">
+    <ion-tab-bar slot="bottom" class="tab-bar">
+      <!-- Botón Home con el Logo -->
+      <ion-tab-button tab="home" routerLink="/home" class="tab-button">
         <ion-img 
           src="assets/BEFINA_PNG_COLOR_COPIA.png" 
           alt="Logo Befina" 
-          style="height: 24px; width: auto; margin: 0 auto;">
+          class="tab-icon logo-icon">
         </ion-img>
-        <ion-label style="font-size: 12px;">Home</ion-label>
+        <ion-label class="tab-label gradient-text">Home</ion-label>
       </ion-tab-button>      
 
-      <ion-tab-button tab="carrito" routerLink="/carrito">
-        <ion-icon name="cart-outline"></ion-icon>
-        <ion-label>Carrito</ion-label>
+      <!-- Botón Carrito -->
+      <ion-tab-button tab="carrito" routerLink="/carrito" class="tab-button">
+        <ion-icon name="cart-outline" class="tab-icon gradient-icon"></ion-icon>
+        <ion-label class="tab-label gradient-text">Carrito</ion-label>
       </ion-tab-button>
       
-      <ion-tab-button tab="historial" routerLink="/historial">
-        <ion-icon name="clipboard-outline"></ion-icon>
-        <ion-label>Mis pedidos</ion-label>
+      <!-- Botón Historial -->
+      <ion-tab-button tab="historial" routerLink="/historial" class="tab-button">
+        <ion-icon name="clipboard-outline" class="tab-icon gradient-icon"></ion-icon>
+        <ion-label class="tab-label gradient-text">Mis pedidos</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="cuenta" routerLink="/cuenta">
-        <ion-icon name="person-outline"></ion-icon>
-        <ion-label>Mi cuenta</ion-label>
+      <!-- Botón Mi cuenta -->
+      <ion-tab-button tab="cuenta" routerLink="/cuenta" class="tab-button">
+        <ion-icon name="person-outline" class="tab-icon gradient-icon"></ion-icon>
+        <ion-label class="tab-label gradient-text">Mi cuenta</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

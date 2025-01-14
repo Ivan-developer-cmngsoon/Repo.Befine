@@ -71,3 +71,63 @@ ion-content {
 .custom-subtitle {
   color: black;
 }
+
+/* Personalización del acordeón */
+.custom-accordion {
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Encabezado del acordeón con gradiente */
+.accordion-header {
+  --ion-item-background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul */
+  color: white; /* Texto blanco */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Hover en el encabezado del acordeón */
+.accordion-header:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Personalización de ítems del menú */
+.list-item {
+  --ion-item-background: white;
+  --ion-item-hover-background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Botones del menú con gradiente */
+.gradient-button {
+  --ion-item-background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul */
+  color: white; /* Texto blanco */
+  border-radius: 20px; /* Bordes redondeados */
+  margin: 8px 0; /* Espaciado entre botones */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Hover en los botones del menú */
+.gradient-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Iconos del menú */
+.list-item ion-icon {
+  color: white;
+  font-size: 20px;
+}
+
+/* Último ítem sin borde */
+.list-item:last-child {
+  border-bottom: none;
+}
