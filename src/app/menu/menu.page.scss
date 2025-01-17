@@ -2,66 +2,96 @@
 .menu-container {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Espacio entre botones */
+  gap: 16px; /* Espaciado entre botones */
   padding: 16px;
-  opacity: 0; /* Ocultar al inicio */
-  transform: translateY(20px); /* Posición inicial desplazada */
-  animation: fade-slide-in 0.6s ease-out forwards; /* Animación al cargar */
 }
 
 /* Botones del menú */
-.menu-btn {
+.menu-button {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Ícono y texto alineados a la izquierda */
-  padding: 12px 16px;
-  background: linear-gradient(90deg, #003973, #00509e); /* Degradado azul semi oscuro */
-  border: none;
-  border-radius: 8px; /* Botones con esquinas redondeadas */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
-  color: white; /* Texto en blanco */
-  font-size: 1.2rem; /* Tamaño del texto */
+  justify-content: flex-start;
+  gap: 12px; /* Espaciado entre el ícono y el texto */
+  background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul vibrante */
+  color: white;
+  font-size: 1rem;
   font-weight: bold;
+  padding: 14px 16px; /* Espaciado interno */
+  border: none;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  background-size: 200% 200%; /* Para movimiento dinámico del degradado */
-  animation: gradient-move 3s ease infinite; /* Animación del fondo */
 }
 
-/* Ícono dentro del botón */
-.menu-btn ion-icon {
-  font-size: 1.5rem; /* Tamaño del ícono */
-  margin-right: 12px; /* Espacio entre el ícono y el texto */
+/* Íconos en los botones */
+.menu-button ion-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Efecto de hover */
-.menu-btn:hover {
-  transform: translateY(-2px); /* Movimiento sutil hacia arriba */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+/* Hover y focus en los botones */
+.menu-button:hover {
+  transform: translateY(-4px); /* Efecto de flotación */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+  background: linear-gradient(to right, #0055aa, #007acc); /* Gradiente más oscuro */
 }
 
-/* Animación de fondo gradiente dinámico */
-@keyframes gradient-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.menu-button:hover ion-icon {
+  transform: scale(1.2); /* Aumenta el tamaño del ícono */
+  color: #00ccff; /* Cambia el color del ícono */
 }
 
-/* Animación de fade-in y slide-in */
-@keyframes fade-slide-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px); /* Desplazado hacia abajo */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Posición final */
-  }
+.menu-button:focus {
+  outline: none;
+  box-shadow: 0 0 10px #007acc; /* Brillo alrededor del botón */
+}
+
+/* Texto dentro de los botones */
+.menu-button span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo del encabezado */
+.toolbar-header {
+  background: white;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Título centrado */
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #0066cc;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button ion-icon {
+  font-size: 24px;
+  color: #25D366;
+}
+
+/* Botón de volver */
+.goback-button {
+  padding: 8px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Ícono del botón de volver */
+.goback-icon {
+  font-size: 24px;
+  color: #0066cc;
+}
+
+.goback-button:hover .goback-icon {
+  transform: scale(1.2);
+  color: #0099ff;
 }
