@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="tab-bar">
+      <!-- Botón Home con el Logo -->
+      <ion-tab-button tab="home" routerLink="/home" class="tab-button">
+        <ion-img 
+          src="assets/BEFINA_PNG_COLOR_COPIA.png" 
+          alt="Logo Befina" 
+          class="tab-icon logo-icon">
+        </ion-img>
+        <ion-label class="tab-label gradient-text">Home</ion-label>
+      </ion-tab-button>      
+
+      <!-- Botón Carrito -->
+      <ion-tab-button tab="carrito" routerLink="/carrito" class="tab-button">
+        <ion-icon name="cart-outline" class="tab-icon gradient-icon"></ion-icon>
+        <ion-label class="tab-label gradient-text">Carrito</ion-label>
+      </ion-tab-button>
+      
+      <!-- Botón Historial -->
+      <ion-tab-button tab="historial" routerLink="/historial" class="tab-button">
+        <ion-icon name="clipboard-outline" class="tab-icon gradient-icon"></ion-icon>
+        <ion-label class="tab-label gradient-text">Mis pedidos</ion-label>
+      </ion-tab-button>
+
+      <!-- Botón Mi cuenta -->
+      <ion-tab-button tab="cuenta" routerLink="/cuenta" class="tab-button">
+        <ion-icon name="person-outline" class="tab-icon gradient-icon"></ion-icon>
+        <ion-label class="tab-label gradient-text">Mi cuenta</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>

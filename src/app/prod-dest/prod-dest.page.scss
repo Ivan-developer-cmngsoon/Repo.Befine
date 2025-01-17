@@ -1,0 +1,100 @@
+/* Tarjeta de producto */
+.product-card {
+  margin: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del Producto */
+.product-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.product-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00509e;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiquetas llamativas */
+.product-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.popular {
+  background: #ff5252;
+}
+
+.oferta {
+  background: #ff9800;
+}
+
+.exclusivo {
+  background: #9c27b0;
+}
+
+/* Imagen del Producto */
+.product-image {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Detalles del Producto */
+.product-details {
+  text-align: center;
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Contenedor del precio */
+.price-container {
+  text-align: center;
+  margin: 8px 0;
+}
+
+.price-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Botones de acción */
+.actions-container {
+  margin-top: 12px;
+}
+
+.custom-cart-btn {
+  background: linear-gradient(90deg, #003973, #00509e);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,89 @@
+/* Estilo general del encabezado */
+.toolbar-header {
+  background: linear-gradient(to right, #0066cc, #0099ff);
+  color: white;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button ion-icon {
+  font-size: 24px;
+  color: #25D366;
+}
+
+/* Título */
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  text-align: center;
+  color: #0066cc;
+}
+
+/* Gradiente azul para los botones */
+.gradient-button {
+  --ion-item-background: linear-gradient(to right, #0066cc, #0099ff);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del acordeón */
+.custom-accordion {
+  margin: 16px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Carrusel */
+.custom-carousel img {
+  border-radius: 10px;
+}
+
+/* Estilo de las tarjetas */
+ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+ion-card-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+ion-card-content {
+  background: #f9f9f9;
+}
+
+/* Botón Recargas - Ícono llamativo */
+.recargas-button {
+  --background: transparent; /* Fondo transparente */
+  padding: 8px;
+  border-radius: 50%; /* Botón circular */
+  transition: transform 0.3s ease-in-out; /* Animación suave al hover */
+}
+
+/* Ícono Recargas */
+.recargas-button ion-icon {
+  font-size: 32px; /* Tamaño grande del ícono */
+  color: #0066cc; /* Color inicial del ícono */
+  transition: color 0.5s ease-in-out, filter 0.5s ease-in-out; /* Transición de color y brillo */
+}
+
+/* Animación del ícono al hover */
+.recargas-button ion-icon:hover {
+  color: #0099ff; /* Cambia a un color más claro al hover */
+  filter: drop-shadow(0 0 10px #0099ff); /* Efecto de brillo */
+}
+
+/* Hover para el botón */
+.recargas-button:hover {
+  transform: scale(1.2); /* Crece ligeramente al pasar el cursor */
+  cursor: pointer;
+}

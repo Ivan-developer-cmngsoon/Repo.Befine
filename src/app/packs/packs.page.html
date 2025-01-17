@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="primary" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>PACKS Y DISPENSADORES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Lista de productos -->
+  <ion-card *ngFor="let item of products; let i = index" class="product-card">
+    <!-- Encabezado del Producto -->
+    <ion-card-header>
+      <ion-card-title>{{ item.product.name }}</ion-card-title>
+      <p>{{ item.product.description }}</p>
+    </ion-card-header>
+
+    <!-- Imagen -->
+    <img [src]="item.product.imageUrl" [alt]="item.product.name" />
+
+    <!-- Controles de cantidad -->
+    <div class="quantity-controls ion-text-center">
+      <ion-button fill="outline" color="primary" (click)="decreaseQuantity(i)">
+        <ion-icon name="remove-outline"></ion-icon>
+      </ion-button>
+      <span>{{ item.quantity }}</span>
+      <ion-button fill="outline" color="primary" (click)="increaseQuantity(i)">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Precio Total -->
+    <div class="price-container ion-text-center">
+      <p>Total: <strong>${{ item.totalPrice }}</strong></p>
+    </div>
+
+    <!-- Botón para añadir al carrito -->
+    <ion-button expand="block" color="success" (click)="addToCart(i)">
+      Añadir al carrito
+    </ion-button>
+  </ion-card>
+</ion-content>

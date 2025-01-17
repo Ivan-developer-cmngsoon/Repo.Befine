@@ -1,0 +1,84 @@
+/* Encabezado del Producto */
+.product-header {
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .product-title {
+    font-size: 2.2rem; /* Aumentado para mayor protagonismo */
+    font-weight: bold;
+    color: #003973; /* Azul más oscuro y atractivo */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra más sutil pero efectiva */
+    margin-bottom: 8px; /* Espacio con el contenido inferior */
+  }
+  
+  /* Imagen del Producto */
+  .product-image {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    border-radius: 12px; /* Bordes más suaves */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  }
+  
+  /* Contenedor de los botones de cantidad */
+  .quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px; /* Más espacio entre los botones */
+    margin: 20px 0;
+  }
+  
+  /* Estilo para el número de cantidad */
+  .quantity {
+    font-size: 1.8rem; /* Tamaño más grande para destacar */
+    font-weight: bold;
+    color: #003973; /* Azul oscuro acorde con el diseño */
+  }
+  
+  /* Contenedor del precio */
+  .price-container {
+    text-align: center;
+    margin-top: 16px;
+    padding: 12px;
+    background: linear-gradient(90deg, #f7f9fc, #eaf1f8); /* Fondo con ligero degradado */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra más elegante */
+  }
+  
+  .price-value {
+    font-size: 2rem; /* Tamaño grande para mayor visibilidad */
+    font-weight: bold;
+    color: #00509e; /* Azul profesional */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+  }
+  
+  /* Contenedor de acciones */
+  .actions-container {
+    padding: 16px;
+    margin-top: 16px; /* Más espacio superior */
+  }
+  
+  /* Botón personalizado: Añadir al carrito */
+  .actions-container ion-button {
+    background: linear-gradient(90deg, #003973, #00509e); /* Degradado azul oscuro */
+    color: #fff; /* Texto blanco */
+    font-size: 1.3rem; /* Tamaño del texto */
+    font-weight: bold;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  }
+  
+  /* Hover del botón */
+  .actions-container ion-button:hover {
+    transform: translateY(-3px); /* Movimiento hacia arriba */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    background: linear-gradient(90deg, #00509e, #0066cc); /* Degradado más claro */
+  }
+  

@@ -1,0 +1,32 @@
+.tab-bar {
+  background-color: #ffffff;
+  border-top: 1px solid #d1d1d1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-button {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.tab-icon {
+  color: #0078D7;
+  font-size: 24px; /* Tamaño estándar de los íconos */
+  height: 24px;
+  width: 24px;
+  margin: 0 auto;
+}
+
+.logo-icon {
+  width: 28px; /* Tamaño similar a los íconos estándar */
+  height: 28px;
+  object-fit: contain;
+}
+
+.tab-label {
+  font-size: 12px;
+  color: #0078D7;
+  transition: color 0.3s ease-in-out;
+}

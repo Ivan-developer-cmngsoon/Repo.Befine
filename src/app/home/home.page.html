@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp a la izquierda -->
+    <ion-buttons slot="start">
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- Título centrado -->
+    <ion-title class="app-title">BEFINE</ion-title>
+
+    <!-- Botones a la derecha -->
+    <ion-buttons slot="end">
+      <!-- Botón Recargas -->
+      <ion-button routerLink="/recargas" fill="clear" class="recargas-button">
+        <ion-icon
+          [style.color]="iconColor"
+          name="water-outline"
+          class="recargas-icon"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Acordeón -->
+  <ion-accordion-group expand="inset" class="custom-accordion">
+    <ion-accordion value="pedido">
+      <ion-item slot="header" class="accordion-header gradient-button">
+        <ion-label>Realiza tu pedido</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list>
+          <!-- Botones dentro del acordeón -->
+          <ion-item button (click)="repetirPedido()" class="list-item gradient-button">
+            <ion-icon name="repeat-outline" slot="start"></ion-icon>
+            <ion-label>Repetir último pedido</ion-label>
+          </ion-item>
+          <ion-item button (click)="realizarPedido()" class="list-item gradient-button">
+            <ion-icon name="create-outline" slot="start"></ion-icon>
+            <ion-label>Editar último pedido</ion-label>
+          </ion-item>
+          <ion-item button routerLink="/menu" class="list-item gradient-button">
+            <ion-icon name="list-outline" slot="start"></ion-icon>
+            <ion-label>Ver menú</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <!-- Carrousel -->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide custom-carousel" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/images/catalogo 24 befine.jpg" class="d-block w-100" alt="Catálogo">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/promos2_befine.jpg" class="d-block w-100" alt="Promoción 2">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/promos3_befine.jpg" class="d-block w-100" alt="Promoción 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Cards -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Encuentra el producto perfecto para ti</ion-card-title>
+      <ion-card-subtitle>Elige una opción y aprovecha nuestras promociones personalizadas</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item button routerLink="/recargas">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/planta_primeras.jpg" alt="Recargas Rápidas">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Recargas Rápidas</h2>
+            <p>¿Solo necesitas agua? Reponla en segundos.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item button routerLink="/packs">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/pack_portada.jpg" alt="Packs Completos">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Packs Completos</h2>
+            <p>Dispensadores y bidones al mejor precio.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item button routerLink="/empresas">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/pack_portada.jpg" alt="Soluciones Empresariales">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Soluciones Empresariales</h2>
+            <p>Abastece tu oficina con nuestros paquetes exclusivos.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item button routerLink="/promociones" lines="none">
+          <ion-thumbnail slot="start">
+            <img src="assets/images/Adulto_mayor_2k.jpg" alt="Promociones Especiales">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Promociones Especiales</h2>
+            <p>Ofertas por tiempo limitado, ¡aprovéchalas!</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

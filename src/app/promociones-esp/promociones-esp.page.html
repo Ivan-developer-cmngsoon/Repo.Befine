@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botón de WhatsApp a la izquierda -->
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- Título centrado -->
+    <ion-title>PROMOCIONES ESPECIALES</ion-title>
+
+    <!-- Botón de volver a la derecha -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Promoción 1 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pack Familiar</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="assets/images/promos1_befine.jpg" alt="Pack Familiar" />
+          </ion-thumbnail>
+          <ion-label>
+            <p>Incluye 3 recargas de agua + 1 dispensador portátil.</p>
+            <strong>$25.000</strong>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" (click)="addToCart('Pack Familiar')">Añadir al carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Promoción 2 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pack Empresarial</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="assets/images/promos2_befine.jpg" alt="Pack Empresarial" />
+          </ion-thumbnail>
+          <ion-label>
+            <p>Incluye dispensador frío/caliente + 5 recargas.</p>
+            <strong>$80.000</strong>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" (click)="addToCart('Pack Empresarial')">Añadir al carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Promoción 3 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pack Premium</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="assets/images/promos3_befine.jpg" alt="Pack Premium" />
+          </ion-thumbnail>
+          <ion-label>
+            <p>Dispensador eléctrico con compresor y 3 recargas.</p>
+            <strong>$120.000</strong>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" (click)="addToCart('Pack Premium')">Añadir al carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
