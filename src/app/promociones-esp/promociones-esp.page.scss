@@ -1,49 +1,75 @@
-/* Título de Categorías */
-.category-header {
-    background: linear-gradient(45deg, #007bff, #00d4ff);
-    color: white;
-    text-align: center;
-    padding: 12px 0;
-    margin: 16px 0;
-    border-radius: 8px;
-  }
-  
-  .category-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Tarjeta de Producto */
-  ion-card {
-    margin: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Título dentro de la tarjeta */
-  ion-card-title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #00509e;
-  }
-  
-  ion-card-content {
-    padding: 16px;
-  }
-  
-  ion-thumbnail img {
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Botón Añadir al carrito */
-  ion-button {
-    margin-top: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 8px;
-  }
-  
+/* Cards de promociones */
+.promo-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin: 16px;
+  padding: 8px;
+  background: #ffffff; /* Fondo blanco */
+}
+
+/* Botones dentro de las promociones */
+.promo-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover en los botones de las promociones */
+.promo-button:hover {
+  transform: scale(1.03); /* Efecto de crecimiento */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más prominente */
+  background: linear-gradient(to right, #0055aa, #007acc); /* Gradiente más oscuro */
+}
+
+/* Estilo general del encabezado */
+.toolbar-header {
+  background: white;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Título centrado */
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #0066cc;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button ion-icon {
+  font-size: 24px;
+  color: #25D366;
+}
+
+/* Botón de volver */
+.goback-button {
+  padding: 8px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Ícono del botón de volver */
+.goback-icon {
+  font-size: 24px;
+  color: #0066cc;
+}
+
+.goback-button:hover .goback-icon {
+  transform: scale(1.2);
+  color: #0099ff;
+}

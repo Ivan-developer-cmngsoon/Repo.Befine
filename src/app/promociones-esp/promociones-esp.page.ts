@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -9,12 +9,14 @@ import { NavController } from '@ionic/angular';
 export class PromocionesEspPage {
   constructor(private navCtrl: NavController) {}
 
+  // Navegar hacia atrás
   goBack() {
-    this.navCtrl.back(); // Navegar a la página anterior
+    this.navCtrl.back();
   }
 
-  addToCart(product: string) {
-    console.log(`${product} añadido al carrito`);
-    alert(`${product} ha sido añadido al carrito.`);
+  // Añadir al carrito
+  addToCart(packName: string) {
+    console.log(`${packName} añadido al carrito`);
+    // Aquí puedes agregar lógica adicional para gestionar el carrito.
   }
 }
