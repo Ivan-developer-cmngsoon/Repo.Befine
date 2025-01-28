@@ -9,10 +9,12 @@ import { NavController } from '@ionic/angular';
 export class ProdDestPage {
   constructor(private navCtrl: NavController) {}
 
+  // Navegar hacia atrás
   goBack() {
-    this.navCtrl.back(); // Navegar a la página anterior
+    this.navCtrl.back();
   }
 
+  // Añadir al carrito
   addToCart(product: string) {
     console.log(`${product} añadido al carrito`);
     alert(`${product} ha sido añadido al carrito.`);

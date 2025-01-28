@@ -1,100 +1,118 @@
-/* Tarjeta de producto */
-.product-card {
-  margin: 16px;
-  padding: 16px;
+/* Tarjeta de promociones */
+.promo-card {
   border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin: 16px;
+  padding: 8px;
+  background: #ffffff; /* Fondo blanco */
 }
 
-/* Encabezado del Producto */
-.product-header {
+/* Estilo del título de los cards */
+ion-card-title {
+  color: #00509e; /* Azul oscuro */
+  font-size: 1.4rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita para destacar */
+  margin-bottom: 8px; /* Espaciado inferior */
+  text-align: center; /* Centrado opcional */
+  text-transform: uppercase; /* Mayúsculas para consistencia */
+}
+
+/* Estilo para el precio en <strong> */
+ion-label strong {
+  color: #00509e; /* Azul oscuro */
+  font-size: 1.2rem; /* Tamaño del texto más grande */
+  font-weight: bold; /* Negrita para destacar */
+  display: block; /* Asegura que el precio ocupe una línea separada */
+  margin-top: 8px; /* Espaciado superior */
+  text-align: center; /* Centrado opcional */
+}
+
+/* Categoría encabezados */
+.category-header {
   text-align: center;
-  position: relative;
-  margin-bottom: 8px;
-}
-
-.product-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #00509e;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Etiquetas llamativas */
-.product-badge {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 4px 8px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.popular {
-  background: #ff5252;
-}
-
-.oferta {
-  background: #ff9800;
-}
-
-.exclusivo {
-  background: #9c27b0;
-}
-
-/* Imagen del Producto */
-.product-image {
-  display: flex;
-  justify-content: center;
   margin: 16px 0;
 }
 
-.product-image img {
+.category-header h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #00509e; /* Azul oscuro */
+}
+
+/* Imagen del producto */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.image-container img {
   max-width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Detalles del Producto */
-.product-details {
+/* Botón "Añadir al Carrito" */
+.promo-button {
+  display: block;
+  width: 100%;
   text-align: center;
-  margin: 8px 0;
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.4;
-}
-
-/* Contenedor del precio */
-.price-container {
-  text-align: center;
-  margin: 8px 0;
-}
-
-.price-value {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #007bff;
-}
-
-/* Botones de acción */
-.actions-container {
-  margin-top: 12px;
-}
-
-.custom-cart-btn {
-  background: linear-gradient(90deg, #003973, #00509e);
+  background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul */
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
+  padding: 12px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
 
-.custom-cart-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+.promo-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to right, #0055aa, #007acc);
+}
+
+/* Header del Toolbar */
+.toolbar-header {
+  background: white;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px; /* Título destacado */
+  font-weight: bold;
+  text-align: center;
+  color: #00509e; /* Azul oscuro */
+  text-transform: uppercase; /* Mayúsculas para consistencia */
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button ion-icon {
+  font-size: 24px;
+  color: #25D366; /* Verde WhatsApp */
+}
+
+/* Botón de volver */
+.goback-button {
+  padding: 8px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.goback-button ion-icon {
+  font-size: 24px;
+  color: #00509e;
+}
+
+.goback-button:hover ion-icon {
+  transform: scale(1.2);
+  color: #0099ff;
 }

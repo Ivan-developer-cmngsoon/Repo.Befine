@@ -51,8 +51,9 @@
     <p class="price-value">{{ totalPrice | currency: 'CLP' }}</p>
   </div>
 
-  <!-- Botón de Añadir al Carrito -->
+    <!-- Botón de Añadir al Carrito -->
   <div class="actions-container">
-    <ion-button class="custom-cart-btn" expand="block" (click)="buyNow()">Añadir al carrito</ion-button>
+    <button class="promo-button" (click)="buyNow()">Añadir al carrito</button>
   </div>
+
 </ion-content>

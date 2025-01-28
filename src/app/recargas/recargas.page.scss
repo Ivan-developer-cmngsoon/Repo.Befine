@@ -140,3 +140,26 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
   background: linear-gradient(90deg, #00509e, #0066cc);
 }
+/* Botón personalizado: Añadir al carrito */
+.promo-button {
+  display: block;
+  width: 100%; /* Botón ocupa todo el ancho */
+  text-align: center;
+  background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px; /* Bordes redondeados */
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover del botón */
+.promo-button:hover {
+  transform: scale(1.03); /* Efecto de crecimiento */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más prominente */
+  background: linear-gradient(to right, #0055aa, #007acc); /* Gradiente más oscuro */
+}

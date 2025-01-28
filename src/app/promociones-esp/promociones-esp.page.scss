@@ -73,3 +73,22 @@
   transform: scale(1.2);
   color: #0099ff;
 }
+
+/* Estilo del título de los cards */
+ion-card-title {
+  color: #00509e; /* Azul oscuro */
+  font-size: 1.4rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita para destacar */
+  margin-bottom: 8px; /* Espaciado inferior */
+  text-align: center; /* Centrado opcional */
+}
+
+/* Estilo para los precios en <strong> */
+ion-label strong {
+  color: #00509e; /* Azul oscuro */
+  font-size: 1.2rem; /* Tamaño del texto más grande */
+  font-weight: bold; /* Negrita para destacar */
+  display: block; /* Asegura que el precio ocupe una línea separada */
+  margin-top: 8px; /* Espaciado superior */
+  text-align: center; /* Centrado */
+}
