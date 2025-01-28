@@ -2,8 +2,8 @@
 .menu-container {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Espaciado entre botones */
-  padding: 16px;
+  gap: 20px; /* Espaciado mayor entre botones */
+  padding: 20px;
 }
 
 /* Botones del menú */
@@ -11,46 +11,43 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 12px; /* Espaciado entre el ícono y el texto */
-  background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul vibrante */
+  gap: 16px; /* Espaciado entre el ícono y el texto */
+  background: linear-gradient(to right, #0066cc, #0099ff);
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem; /* Tamaño de texto más grande */
   font-weight: bold;
-  padding: 14px 16px; /* Espaciado interno */
+  padding: 18px 20px; /* Botones más grandes */
   border: none;
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border-radius: 16px; /* Bordes redondeados más pronunciados */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
 /* Íconos en los botones */
 .menu-button ion-icon {
-  font-size: 24px;
+  font-size: 28px; /* Íconos más grandes */
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Hover y focus en los botones */
-.menu-button:hover {
-  transform: translateY(-4px); /* Efecto de flotación */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
-  background: linear-gradient(to right, #0055aa, #007acc); /* Gradiente más oscuro */
-}
-
 .menu-button:hover ion-icon {
-  transform: scale(1.2); /* Aumenta el tamaño del ícono */
-  color: #00ccff; /* Cambia el color del ícono */
+  transform: scale(1.2);
+  color: #00ccff;
 }
 
 .menu-button:focus {
   outline: none;
-  box-shadow: 0 0 10px #007acc; /* Brillo alrededor del botón */
+  box-shadow: 0 0 12px #007acc;
 }
 
 /* Texto dentro de los botones */
 .menu-button span {
-  font-size: 1rem;
+  font-size: 1.2rem; /* Texto más grande */
   font-weight: bold;
+}
+
+/* Botón grande */
+.large-button {
+  height: 80px; /* Altura de los botones aumentada */
 }
 
 /* Estilo del encabezado */
@@ -66,7 +63,7 @@
 /* Título centrado */
 .app-title {
   font-family: 'Roboto', sans-serif;
-  font-size: 22px;
+  font-size: 26px; /* Título más grande */
   font-weight: bold;
   text-align: center;
   color: #0066cc;
@@ -74,20 +71,20 @@
 
 /* Botón de WhatsApp */
 .whatsapp-button ion-icon {
-  font-size: 24px;
+  font-size: 28px;
   color: #25D366;
 }
 
 /* Botón de volver */
 .goback-button {
-  padding: 8px;
+  padding: 10px;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
 /* Ícono del botón de volver */
 .goback-icon {
-  font-size: 24px;
+  font-size: 28px;
   color: #0066cc;
 }
 
