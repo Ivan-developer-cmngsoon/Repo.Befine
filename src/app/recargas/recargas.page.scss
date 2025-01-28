@@ -39,10 +39,24 @@
   margin: 20px 0;
 }
 
-.product-title {
-  font-size: 2.4rem;
+/* Contenedor del mensaje destacado */
+.highlight-banner {
+  margin: 16px auto;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #003973, #00509e); /* Degradado azul */
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+  max-width: 90%;
+}
+
+/* Texto del mensaje */
+.highlight-text {
+  font-size: 1.2rem; /* Tamaño más grande */
   font-weight: bold;
-  color: #003973; /* Azul más oscuro */
+  color: #ffffff; /* Texto blanco */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+  margin: 0;
 }
 
 /* Imagen del Producto */
