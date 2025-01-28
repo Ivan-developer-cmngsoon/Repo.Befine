@@ -1,45 +1,73 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp a la izquierda -->
     <ion-buttons slot="start">
-      <ion-button fill="clear" color="primary" (click)="goBack()">
-        <ion-icon name="arrow-back-outline"></ion-icon>
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>PACKS Y DISPENSADORES</ion-title>
+
+    <!-- Título centrado -->
+    <ion-title class="app-title">PACKS/DISPENSADORES</ion-title>
+
+    <!-- Botón de volver a la derecha -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goBack()" class="goback-button">
+        <ion-icon name="arrow-back-outline" class="goback-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Lista de productos -->
-  <ion-card *ngFor="let item of products; let i = index" class="product-card">
-    <!-- Encabezado del Producto -->
+<ion-content>
+  <!-- Producto 1 -->
+  <ion-card class="promo-card">
     <ion-card-header>
-      <ion-card-title>{{ item.product.name }}</ion-card-title>
-      <p>{{ item.product.description }}</p>
+      <ion-card-title>Pack Eléctrico Ventilado</ion-card-title>
     </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img src="assets/images/promos_befine.jpg" alt="Pack Eléctrico Ventilado" />
+      </div>
+      <ion-label>
+        <p>Incluye 1 dispensador eléctrico ventilado y 3 recargas de agua.</p>
+        <strong>$70,000</strong>
+      </ion-label>
+      <button class="promo-button" (click)="addToCart('Pack Eléctrico Ventilado')">Añadir al carrito</button>
+    </ion-card-content>
+  </ion-card>
 
-    <!-- Imagen -->
-    <img [src]="item.product.imageUrl" [alt]="item.product.name" />
+  <!-- Producto 2 -->
+  <ion-card class="promo-card">
+    <ion-card-header>
+      <ion-card-title>Pack Eléctrico Compresor</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img src="assets/images/promos_befine.jpg" alt="Pack Eléctrico Compresor" />
+      </div>
+      <ion-label>
+        <p>Incluye 1 dispensador eléctrico con compresor y 3 recargas de agua.</p>
+        <strong>$120,000</strong>
+      </ion-label>
+      <button class="promo-button" (click)="addToCart('Pack Eléctrico Compresor')">Añadir al carrito</button>
+    </ion-card-content>
+  </ion-card>
 
-    <!-- Controles de cantidad -->
-    <div class="quantity-controls ion-text-center">
-      <ion-button fill="outline" color="primary" (click)="decreaseQuantity(i)">
-        <ion-icon name="remove-outline"></ion-icon>
-      </ion-button>
-      <span>{{ item.quantity }}</span>
-      <ion-button fill="outline" color="primary" (click)="increaseQuantity(i)">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-button>
-    </div>
-
-    <!-- Precio Total -->
-    <div class="price-container ion-text-center">
-      <p>Total: <strong>${{ item.totalPrice }}</strong></p>
-    </div>
-
-    <!-- Botón para añadir al carrito -->
-    <ion-button expand="block" color="success" (click)="addToCart(i)">
-      Añadir al carrito
-    </ion-button>
+  <!-- Producto 3 -->
+  <ion-card class="promo-card">
+    <ion-card-header>
+      <ion-card-title>Dispensador USB</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img src="assets/images/catalogo_befine.jpg" alt="Dispensador USB" />
+      </div>
+      <ion-label>
+        <p>Dispensador USB portátil, fácil de usar y transportar.</p>
+        <strong>$15,000</strong>
+      </ion-label>
+      <button class="promo-button" (click)="addToCart('Dispensador USB')">Añadir al carrito</button>
+    </ion-card-content>
   </ion-card>
 </ion-content>
