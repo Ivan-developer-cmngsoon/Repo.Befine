@@ -1,66 +1,57 @@
 <ion-header>
-  <ion-toolbar>
-    <!-- Botón de WhatsApp a la izquierda -->
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp -->
     <ion-buttons slot="start">
-      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
         <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <!-- Título centrado -->
-    <ion-title>BIDONES NUEVOS</ion-title>
+    <!-- Título del encabezado -->
+    <ion-title class="app-title">BIDONES NUEVOS</ion-title>
 
-    <!-- Botón de volver a la derecha -->
+    <!-- Botón de volver -->
     <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="goBack()">
+      <ion-button fill="clear" (click)="goBack()" class="goback-button">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Encabezado del Producto -->
-  <div class="product-header">
-    <h1 class="product-title">{{ product.name }}</h1>
-    <span class="product-badge" *ngIf="product.tags && product.tags.length > 0">
-      {{ product.tags[0] }}
-    </span>
-    
+<ion-content>
+  <!-- Mensaje destacado debajo del título -->
+  <div class="highlight-banner">
+    <p class="highlight-text">
+      ¡Obtén tus bidones con recargas al mejor precio!
+    </p>
   </div>
 
   <!-- Imagen del Producto -->
   <div class="product-image">
-    <ion-img [src]="product.imageUrl" [alt]="product.name"></ion-img>
+    <img src="assets/images/promos3_befine.jpg" alt="Bidones Nuevos">
   </div>
 
-  <!-- Descripción del Producto -->
-  <div class="product-details">
-    <p>{{ product.description }}</p>
-  </div>
-
-  <!-- Controles de cantidad -->
-  <div class="quantity-container ion-text-center">
-    <ion-button fill="outline" color="primary" (click)="decreaseQuantity()" aria-label="Disminuir cantidad">
+  <!-- Controles de Cantidad -->
+  <div class="quantity-container">
+    <ion-button class="quantity-btn" (click)="decreaseQuantity()">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
 
     <span class="quantity">{{ quantity }}</span>
 
-    <ion-button fill="outline" color="primary" (click)="increaseQuantity()" aria-label="Aumentar cantidad">
+    <ion-button class="quantity-btn" (click)="increaseQuantity()">
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </div>
 
   <!-- Precio Total -->
-  <div class="price-container ion-text-center">
-    <p class="price-value">{{ totalPrice | currency:'$':'symbol':'1.0-0' }}</p>
+  <div class="price-container">
+    <p class="price-value">{{ totalPrice | currency: 'CLP' }}</p>
   </div>
 
-  <!-- Botón de acción -->
-  <div class="actions-container ion-padding">
-    <ion-button expand="block" color="primary" (click)="addToCart()">
-      Añadir al carrito
-    </ion-button>
+  <!-- Botón de Añadir al Carrito -->
+  <div class="actions-container">
+    <button class="promo-button" (click)="buyNow()">Añadir al carrito</button>
   </div>
 </ion-content>

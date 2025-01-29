@@ -1,97 +1,138 @@
-/* Tarjeta de Producto */
-.product-card {
-    margin: 16px;
-    padding: 16px;
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .product-header {
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  
-  .product-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #00509e;
-  }
-  
-  .product-badge {
-    display: inline-block;
-    background-color: #ff9800;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    margin-top: 4px;
-  }
-  
-  .product-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    margin: 16px 0;
-  }
-  
-  .product-details {
-    font-size: 1rem;
-    text-align: center;
-    color: #333;
-    margin-bottom: 12px;
-  }
-  
-  .price-container {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 16px;
-  }
-  
-  /* Botones de Acción */
-  .actions-container ion-button {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-  
-  /* Sección de Contacto */
-  .contact-section {
-    margin: 16px;
-    padding: 16px;
-    background: #f3f4f6;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contact-title {
-    font-size: 1.6rem;
-    color: #388e3c;
-    margin-bottom: 8px;
-  }
-  
-  .contact-description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 16px;
-  }
-  
-  .contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px; /* Espacio entre botones */
-  }
-  
-  .contact-buttons ion-button {
-    font-size: 1.5rem;
-  }
-  
+/* Encabezado */
+.toolbar-header {
+  background: white;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: #0066cc;
+  text-align: center;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button ion-icon {
+  font-size: 28px;
+  color: #25D366;
+}
+
+/* Botón de volver */
+.goback-button ion-icon {
+  font-size: 28px;
+  color: #0066cc;
+}
+
+.goback-button:hover ion-icon {
+  transform: scale(1.2);
+  color: #0099ff;
+}
+
+/* Contenedor del mensaje destacado */
+.highlight-banner {
+  margin: 16px auto;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #003973, #00509e);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+}
+
+.highlight-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Imagen del Producto */
+.product-image {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Controles de Cantidad */
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.quantity-btn {
+  background: linear-gradient(90deg, #003973, #00509e);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quantity-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #00509e, #0066cc);
+}
+
+.quantity {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003973;
+}
+
+/* Precio Total */
+.price-container {
+  text-align: center;
+  margin: 20px 0;
+  background: linear-gradient(90deg, #f7f9fc, #eaf1f8);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.price-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00509e;
+}
+
+/* Botón de Añadir al Carrito */
+.actions-container {
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.promo-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(90deg, #0066cc, #0099ff);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #00509e, #0066cc);
+}

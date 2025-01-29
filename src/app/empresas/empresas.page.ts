@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { CartService } from 'src/app/services/cart.service';
-import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-empresas',
@@ -9,69 +7,40 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./empresas.page.scss'],
 })
 export class EmpresasPage implements OnInit {
-  product: Product = {
-    id: 'PACK_EMPRESA',
-    name: 'Recargas para Empresas',
-    description: 'Incluye dispensadores y recargas personalizadas para empresas.',
-    price: 120000, // Precio inicial base para empresas
-    imageUrl: 'assets/images/empresas_befine.jpg',
-    tags: ['Exclusivo'],
-    category: 'Empresas',
-  };
-
   quantity: number = 1; // Cantidad inicial
-  totalPrice: number = this.product.price; // Precio total inicial
+  totalPrice: number = 2500; // Precio inicial basado en 1 recarga a empresas
 
-  constructor(private navCtrl: NavController, private cartService: CartService) {}
+  constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {
-    this.calculatePrice(); // Calcula el precio al iniciar
-  }
+  ngOnInit() {}
 
-  /**
-   * Regresa a la página anterior.
-   */
-  goBack(): void {
+  // Navegar hacia atrás
+  goBack() {
     this.navCtrl.back();
   }
 
-  /**
-   * Incrementa la cantidad seleccionada.
-   */
-  increaseQuantity(): void {
+  // Incrementar cantidad
+  increaseQuantity() {
     this.quantity++;
     this.calculatePrice();
   }
 
-  /**
-   * Decrementa la cantidad seleccionada, con un mínimo de 1.
-   */
-  decreaseQuantity(): void {
+  // Decrementar cantidad
+  decreaseQuantity() {
     if (this.quantity > 1) {
       this.quantity--;
       this.calculatePrice();
     }
   }
 
-  /**
-   * Calcula el precio total basado en la cantidad seleccionada.
-   */
-  calculatePrice(): void {
-    this.totalPrice = this.product.price * this.quantity;
+  // Calcular el precio total
+  calculatePrice() {
+    this.totalPrice = this.quantity * 2500; // Precio fijo de $2500 por recarga
   }
 
-  /**
-   * Añade el producto al carrito con la cantidad y el precio actualizados.
-   */
-  addToCart(): void {
-    const productToAdd = {
-      ...this.product,
-      quantity: this.quantity,
-      totalPrice: this.totalPrice
-    };
-
-    this.cartService.addToCart(productToAdd);
-    console.log(`${this.product.name} añadido al carrito:`, productToAdd);
-    alert(`${this.product.name} ha sido añadido al carrito.`);
+  // Comprar ahora
+  buyNow() {
+    console.log(`Compra realizada con ${this.quantity} recargas para empresas por un total de ${this.totalPrice} CLP.`);
+    alert(`¡Gracias por tu compra! Total: ${this.totalPrice} CLP`);
   }
 }

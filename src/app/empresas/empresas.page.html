@@ -1,81 +1,57 @@
 <ion-header>
-  <ion-toolbar>
-    <!-- Botón de WhatsApp a la izquierda -->
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp -->
     <ion-buttons slot="start">
-      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
         <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <!-- Título centrado -->
-    <ion-title>EMPRESAS</ion-title>
 
-    <!-- Botón de volver a la derecha -->
+    <!-- Título del encabezado -->
+    <ion-title class="app-title">EMPRESAS</ion-title>
+
+    <!-- Botón de volver -->
     <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="goBack()">
+      <ion-button fill="clear" (click)="goBack()" class="goback-button">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Producto -->
-  <div class="product-card product-empresas ion-text-center">
-    <div class="product-header">
-      <h1 class="product-title">{{ product.name }}</h1>
-      <span class="product-badge exclusivo" *ngIf="product.tags && product.tags.length > 0">
-        {{ product.tags[0] }}
-      </span>
-      
-    </div>
-
-    <!-- Imagen del Producto -->
-    <div class="product-image">
-      <img [src]="product.imageUrl" [alt]="product.name" />
-    </div>
-
-    <!-- Descripción del Producto -->
-    <div class="product-details">
-      <p>{{ product.description }}</p>
-    </div>
-
-    <!-- Controles de cantidad -->
-    <div class="quantity-controls ion-text-center">
-      <ion-button fill="outline" color="primary" (click)="decreaseQuantity()">
-        <ion-icon name="remove-outline"></ion-icon>
-      </ion-button>
-      <span class="quantity">{{ quantity }}</span>
-      <ion-button fill="outline" color="primary" (click)="increaseQuantity()">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-button>
-    </div>
-
-    <!-- Precio Total -->
-    <div class="price-container">
-      <p class="price-value">Total: <strong>${{ totalPrice }}</strong></p>
-    </div>
-
-    <!-- Botón para añadir al carrito -->
-    <div class="actions-container ion-padding">
-      <ion-button expand="block" color="primary" (click)="addToCart()">
-        Añadir al carrito
-      </ion-button>
-    </div>
+<ion-content>
+  <!-- Mensaje destacado debajo del título -->
+  <div class="highlight-banner">
+    <p class="highlight-text">
+      ¡Recargas exclusivas para empresas con IVA incluido!
+    </p>
   </div>
 
-  <!-- Sección de Contacto -->
-  <div class="contact-section ion-text-center ion-padding">
-    <h2 class="contact-title">Contáctanos</h2>
-    <p class="contact-description">¿Necesitas un plan personalizado? Escríbenos:</p>
-    <div class="contact-buttons">
-      <!-- Botón de WhatsApp -->
-      <ion-button fill="solid" color="success" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
-        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
-      </ion-button>
-      <!-- Botón de Gmail -->
-      <ion-button fill="solid" color="danger" href="mailto:befine.cl@gmail.com" target="_blank">
-        <ion-icon name="mail-outline"></ion-icon>
-      </ion-button>
-    </div>
+  <!-- Imagen del Producto -->
+  <div class="product-image">
+    <img src="assets/images/empresas_befine.jpg" alt="Recarga Empresas">
+  </div>
+
+  <!-- Controles de Cantidad -->
+  <div class="quantity-container">
+    <ion-button class="quantity-btn" (click)="decreaseQuantity()">
+      <ion-icon name="remove-outline"></ion-icon>
+    </ion-button>
+
+    <span class="quantity">{{ quantity }}</span>
+
+    <ion-button class="quantity-btn" (click)="increaseQuantity()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Precio Total -->
+  <div class="price-container">
+    <p class="price-value">{{ totalPrice | currency: 'CLP' }}</p>
+  </div>
+
+  <!-- Botón de Añadir al Carrito -->
+  <div class="actions-container">
+    <button class="promo-button" (click)="buyNow()">Añadir al carrito</button>
   </div>
 </ion-content>
