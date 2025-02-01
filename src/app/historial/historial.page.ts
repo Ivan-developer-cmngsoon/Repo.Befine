@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -6,71 +6,53 @@ import { NavController } from '@ionic/angular';
   templateUrl: './historial.page.html',
   styleUrls: ['./historial.page.scss'],
 })
-export class HistorialPage implements OnInit {
-  orders: { id: string; date: string; total: number; status: string }[] = []; // Lista de pedidos
-  lastOrder: any = null; // Último pedido
+export class HistorialPage {
+  pedidos: any[] = [];
 
   constructor(private navCtrl: NavController) {}
 
-  ngOnInit(): void {
-    this.loadOrders(); // Cargar pedidos simulados
+  ngOnInit() {
+    this.initializePedidos();
   }
 
-  /**
-   * Carga una lista simulada de pedidos y establece el último pedido.
-   */
-  private loadOrders(): void {
-    this.orders = [
-      { id: '003', date: '2024-01-15', total: 20000, status: 'Cancelado' },
-      { id: '002', date: '2024-01-10', total: 75000, status: 'En proceso' },
-      { id: '001', date: '2024-01-01', total: 50000, status: 'Entregado' },
+  // Inicializar Pedidos de Ejemplo
+  private initializePedidos() {
+    this.pedidos = [
+      {
+        id: 101,
+        fecha: '2025-01-20',
+        estado: 'Entregado',
+        productos: [
+          { nombre: 'Pack Familiar', cantidad: 1, precio: 25000 },
+          { nombre: 'Recarga x2', cantidad: 2, precio: 5000 },
+        ],
+        total: 30000,
+      },
+      {
+        id: 102,
+        fecha: '2025-01-15',
+        estado: 'En camino',
+        productos: [{ nombre: 'Pack Empresarial', cantidad: 1, precio: 80000 }],
+        total: 80000,
+      },
+      {
+        id: 103,
+        fecha: '2025-01-10',
+        estado: 'Cancelado',
+        productos: [{ nombre: 'Recarga x3', cantidad: 3, precio: 7500 }],
+        total: 7500,
+      },
     ];
-
-    // El último pedido será el primero en la lista
-    this.lastOrder = this.orders[0];
   }
 
-  /**
-   * Navega a la página anterior.
-   */
-  goBack(): void {
+  // Navegar hacia atrás
+  goBack() {
     this.navCtrl.back();
   }
 
-  /**
-   * Muestra los detalles del pedido seleccionado.
-   * @param order Pedido seleccionado.
-   */
-  viewOrderDetails(order: any): void {
-    console.log('Detalles del pedido:', order);
-    alert(`Detalles del pedido #${order.id}\nEstado: ${order.status}\nTotal: $${order.total}`);
+  // Repetir Pedido
+  repetirPedido(pedidoId: number) {
+    console.log(`Repetir pedido #${pedidoId}`);
+    alert(`Pedido #${pedidoId} repetido con éxito.`);
   }
-
-  /**
-   * Devuelve una clase CSS según el estado del pedido.
-   * @param status Estado del pedido.
-   */
-  getOrderStatusClass(status: string): string {
-    switch (status) {
-      case 'Entregado':
-        return 'status-delivered';
-      case 'En proceso':
-        return 'status-in-progress';
-      case 'Cancelado':
-        return 'status-canceled';
-      default:
-        return '';
-    }
-  }
-  /**
- * Repite el pedido seleccionado, añadiéndolo al carrito.
- * @param order Pedido a repetir.
- */
-repeatOrder(order: any): void {
-  console.log('Repetir Pedido:', order);
-
-  // Aquí puedes añadir la lógica para agregar los productos del pedido al carrito.
-  alert(`El pedido #${order.id} se ha añadido nuevamente al carrito.`);
-}
-
 }

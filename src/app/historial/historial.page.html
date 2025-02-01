@@ -1,63 +1,53 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Historial de Pedidos</ion-title>
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp -->
     <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- Título del encabezado -->
+    <ion-title class="app-title">HISTORIAL</ion-title>
+
+    <!-- Botón de volver -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goBack()" class="goback-button">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <!-- Mostrar mensaje si no hay pedidos -->
-  <div *ngIf="orders.length === 0" class="empty-state ion-text-center">
-    <ion-icon name="file-tray-outline" size="large"></ion-icon>
-    <p>No tienes pedidos en tu historial.</p>
-    <ion-button fill="outline" color="primary" routerLink="/menu">
-      Explorar Productos
-    </ion-button>
+<ion-content>
+  <!-- Mensaje destacado debajo del título -->
+  <div class="highlight-banner">
+    <p class="highlight-text">¡Revisa tus pedidos anteriores fácilmente!</p>
   </div>
 
-  <!-- Último Pedido -->
-<div *ngIf="orders.length > 0" class="last-order">
-  <ion-card>
+  <!-- Listado de Pedidos -->
+  <ion-card *ngFor="let pedido of pedidos" class="promo-card">
+    <!-- Encabezado del Pedido -->
     <ion-card-header>
-      <ion-card-title>Último Pedido</ion-card-title>
+      <ion-card-title>Pedido #{{ pedido.id }}</ion-card-title>
     </ion-card-header>
+
+    <!-- Contenido del Pedido -->
     <ion-card-content>
-      <p><strong>ID del Pedido:</strong> {{ lastOrder.id }}</p>
-      <p><strong>Fecha:</strong> {{ lastOrder.date }}</p>
-      <p><strong>Total:</strong> ${{ lastOrder.total }}</p>
-      <p [ngClass]="getOrderStatusClass(lastOrder.status)">
-        <strong>Estado:</strong> {{ lastOrder.status }}
-      </p>
-      <div class="actions">
-        <ion-button fill="clear" color="primary" (click)="viewOrderDetails(lastOrder)">
-          Ver Detalles
-        </ion-button>
-        <ion-button fill="solid" color="primary" (click)="repeatOrder(lastOrder)">
-          Repetir Pedido
-        </ion-button>
+      <p class="order-date">Fecha: {{ pedido.fecha }}</p>
+      <p class="order-status">Estado: <strong>{{ pedido.estado }}</strong></p>
+      <div class="products-list">
+        <div *ngFor="let producto of pedido.productos" class="product-item">
+          <span>{{ producto.nombre }} x{{ producto.cantidad }}</span>
+          <span>CLP{{ producto.precio | number }}</span>
+        </div>
       </div>
+      <div class="price-container">
+        <p class="price-value">Total: CLP{{ pedido.total | number }}</p>
+      </div>
+
+      <!-- Botón Repetir Pedido -->
+      <button class="promo-button" (click)="repetirPedido(pedido.id)">Repetir Pedido</button>
     </ion-card-content>
   </ion-card>
-</div>
-
-
-  <!-- Historial de Pedidos -->
-  <ion-list *ngIf="orders.length > 1" class="order-history">
-    <ion-list-header>
-      <ion-label>Historial Anterior</ion-label>
-    </ion-list-header>
-    <ion-item *ngFor="let order of orders.slice(1)">
-      <ion-label>
-        <p>{{ order.date }}</p>
-        <p [ngClass]="getOrderStatusClass(order.status)">{{ order.status }}</p>
-      </ion-label>
-      <ion-button fill="clear" color="primary" (click)="viewOrderDetails(order)">
-        <ion-icon name="eye-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
 </ion-content>
