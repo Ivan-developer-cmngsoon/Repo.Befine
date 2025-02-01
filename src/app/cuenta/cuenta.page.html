@@ -1,93 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Mi Cuenta</ion-title>
-    <!-- Botón para soporte -->
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp -->
+    <ion-buttons slot="start">
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- Título del encabezado -->
+    <ion-title class="app-title">CUENTA</ion-title>
+
+    <!-- Botón de volver -->
     <ion-buttons slot="end">
-      <ion-button href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
-        <ion-icon name="help-circle-outline"></ion-icon>
+      <ion-button fill="clear" (click)="goBack()" class="goback-button">
+        <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Mostrar si el usuario no está registrado -->
-  <div *ngIf="!isLoggedIn" class="not-logged-in ion-text-center">
-    <ion-icon name="person-circle-outline" size="large"></ion-icon>
-    <p>Inicia sesión o regístrate para acceder a tu cuenta.</p>
-    <ion-button expand="block" routerLink="/login" color="primary">
-      Iniciar Sesión
-    </ion-button>
-    <ion-button expand="block" routerLink="/register" color="secondary">
-      Registrarse
-    </ion-button>
+<ion-content>
+  <!-- Mensaje destacado -->
+  <div class="highlight-banner">
+    <p class="highlight-text">Accede a tu cuenta para gestionar tu perfil y pedidos.</p>
   </div>
 
-  <!-- Mostrar si el usuario está registrado -->
-  <div *ngIf="isLoggedIn" class="logged-in">
-    <!-- Información del Perfil -->
-    <div class="profile-section ion-padding">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Información del Perfil</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p><strong>Nombre:</strong> {{ userName }}</p>
-          <p><strong>Correo:</strong> {{ userEmail }}</p>
-          <ion-button fill="outline" color="primary" expand="block" routerLink="/edit-profile">
-            Editar Perfil
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </div>
-    <!-- Direcciones -->
-    <div class="address-section ion-padding">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Mis Direcciones</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-list>
-            <ion-item *ngFor="let address of userAddresses">
-              <ion-label>{{ address }}</ion-label>
-              <ion-button fill="clear" color="danger">
-                <ion-icon name="trash-outline"></ion-icon>
-              </ion-button>
-            </ion-item>
-          </ion-list>
-          <ion-button fill="outline" color="secondary" expand="block">
-            Añadir Nueva Dirección
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </div>
+  <!-- Mensaje central de Iniciar Sesión/Registrarse -->
+  <div class="account-message">
+    <p class="account-text">
+      Bienvenido a Befine. Para acceder a tu historial de pedidos, gestionar tu información personal o realizar compras, por favor <strong>inicia sesión</strong> o <strong>regístrate</strong>.
+    </p>
 
-    <!-- Historial de Pedidos -->
-    <div class="order-history-section ion-padding">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Historial de Pedidos</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-list>
-            <ion-item *ngFor="let order of orderHistory">
-              <ion-label>
-                <h2>Pedido #{{ order.id }}</h2>
-                <p>Fecha: {{ order.date }}</p>
-                <p>Total: ${{ order.total }}</p>
-                <p>Estado: {{ order.status }}</p>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-    <!-- Botón de Logout -->
-    <div class="logout-section ion-padding">
-      <ion-button expand="block" color="danger" (click)="logout()">
-        Cerrar Sesión
-      </ion-button>
+    <!-- Botones de acción -->
+    <div class="actions-container">
+      <button class="promo-button" (click)="login()">Iniciar Sesión</button>
+      <button class="promo-button" (click)="register()">Registrarse</button>
     </div>
   </div>
 </ion-content>
