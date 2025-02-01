@@ -7,12 +7,39 @@
     justify-content: space-between;
     border-bottom: 1px solid #ddd;
   }
+/* Encabezado */
+.toolbar-header {
+    background: white;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+  }
   
   .app-title {
     font-family: 'Roboto', sans-serif;
-    font-size: 26px;
+    font-size: 26px; /* Título grande para destacar */
     font-weight: bold;
+    color: #0066cc; /* Azul corporativo */
+    text-align: center;
+  }
+  
+  /* Botón de WhatsApp */
+  .whatsapp-button ion-icon {
+    font-size: 28px;
+    color: #25D366;
+  }
+  
+  /* Botón de volver */
+  .goback-button ion-icon {
+    font-size: 28px;
     color: #0066cc;
+  }
+  
+  .goback-button:hover ion-icon {
+    transform: scale(1.2);
+    color: #0099ff;
   }
   
   /* Mensaje destacado */
