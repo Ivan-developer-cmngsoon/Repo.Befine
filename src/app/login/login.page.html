@@ -1,40 +1,54 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Iniciar Sesión</ion-title>
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp -->
+    <ion-buttons slot="start">
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- Título del encabezado -->
+    <ion-title class="app-title">LOGIN</ion-title>
+
+    <!-- Botón de volver -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goBack()" class="goback-button">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
+  <!-- Contenedor principal -->
   <div class="login-container">
-    <!-- Logo o Título -->
-    <div class="logo ion-text-center">
-      <ion-icon name="person-circle-outline" size="large"></ion-icon>
-      <h2>Bienvenido</h2>
+    <!-- Icono de perfil -->
+    <div class="profile-icon">
+      <ion-icon name="person-circle-outline"></ion-icon>
     </div>
 
-    <!-- Formulario de Login -->
-    <form (submit)="login()">
-      <ion-item>
-        <ion-label position="floating">Correo Electrónico</ion-label>
-        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
-      </ion-item>
-      <div class="login-actions ion-padding">
-        <ion-button expand="block" type="submit" color="primary">
-          Iniciar Sesión
-        </ion-button>
-        <ion-button expand="block" fill="outline" color="secondary" routerLink="/register">
-          Registrarse
-        </ion-button>
-      </div>
-    </form>
+    <!-- Título -->
+    <p class="welcome-message">Bienvenido</p>
 
-    <!-- Enlace para recuperar contraseña -->
-    <div class="forgot-password ion-text-center">
-      <a routerLink="/recover-password">¿Olvidaste tu contraseña?</a>
+    <!-- Campos de entrada -->
+    <ion-item class="input-field">
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" placeholder="usuario@correo.com"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-field">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" placeholder="********"></ion-input>
+    </ion-item>
+
+    <!-- Botón de Login -->
+    <div class="actions-container">
+      <button class="promo-button" (click)="login()">Iniciar Sesión</button>
     </div>
+
+    <!-- Enlace para registro -->
+    <p class="register-message">
+      ¿No tienes cuenta? <a (click)="register()">Regístrate aquí</a>.
+    </p>
   </div>
 </ion-content>

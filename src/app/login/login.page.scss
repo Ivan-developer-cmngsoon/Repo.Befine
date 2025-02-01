@@ -1,13 +1,93 @@
+/* Header */
+.toolbar-header {
+  background: white;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+/* Contenedor de Login */
 .login-container {
-    max-width: 400px;
-    margin: auto;
-  }
-  
-  .logo {
-    margin-bottom: 2rem;
-  }
-  
-  .forgot-password {
-    margin-top: 1rem;
-  }
-  
+  margin: 24px auto;
+  padding: 16px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Icono de perfil */
+.profile-icon ion-icon {
+  font-size: 64px;
+  color: #00509e; /* Azul oscuro */
+  margin-bottom: 16px;
+}
+
+/* Mensaje de bienvenida */
+.welcome-message {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Campos de entrada */
+.input-field {
+  margin: 16px 0;
+}
+
+.input-field ion-label {
+  color: #00509e; /* Azul oscuro */
+  font-weight: bold;
+}
+
+.input-field ion-input {
+  color: #333;
+}
+
+/* Botón de acción */
+.actions-container {
+  margin-top: 24px;
+}
+
+.promo-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.promo-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to right, #0055aa, #007acc);
+}
+
+/* Mensaje de registro */
+.register-message {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.register-message a {
+  color: #00509e;
+  text-decoration: underline;
+  font-weight: bold;
+}

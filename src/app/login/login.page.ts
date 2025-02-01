@@ -7,35 +7,22 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  email: string = ''; // Correo electrónico ingresado
-  password: string = ''; // Contraseña ingresada
-
   constructor(private navCtrl: NavController) {}
 
-  /**
-   * Simula el inicio de sesión del usuario.
-   */
-  login(): void {
-    if (!this.email || !this.password) {
-      alert('Por favor, completa todos los campos.');
-      return;
-    }
-  
-    // Validar formato del correo electrónico
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(this.email)) {
-      alert('Por favor, introduce un correo electrónico válido.');
-      return;
-    }
-  
-    // Simulación de inicio de sesión
-    if (this.email === 'test@example.com' && this.password === '123456') {
-      console.log('Inicio de sesión exitoso');
-      this.navCtrl.navigateRoot('/cuenta'); // Redirige a la página de cuenta
-    } else {
-      console.log('Credenciales incorrectas');
-      alert('Correo o contraseña incorrectos. Inténtalo de nuevo.');
-    }
+  // Navegar hacia atrás
+  goBack() {
+    this.navCtrl.back();
   }
-  
+
+  // Iniciar sesión
+  login() {
+    console.log('Iniciar sesión presionado');
+    alert('¡Sesión iniciada correctamente!');
+  }
+
+  // Navegar a registro
+  register() {
+    console.log('Redirigiendo al registro');
+    alert('Redirigiendo a la página de registro...');
+  }
 }
