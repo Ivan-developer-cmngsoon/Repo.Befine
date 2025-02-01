@@ -1,67 +1,70 @@
 <ion-header>
-  <ion-toolbar>
-    <!-- Botón de WhatsApp a la izquierda -->
+  <ion-toolbar class="toolbar-header">
+    <!-- Botón de WhatsApp -->
     <ion-buttons slot="start">
-      <ion-button fill="clear" color="primary" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank">
+      <ion-button fill="clear" href="https://wa.me/message/2KD322Q6H5KUG1" target="_blank" class="whatsapp-button">
         <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <!-- Título centrado -->
-    <ion-title>Carrito de Compras</ion-title>
-      <!-- Botones a la derecha -->
+    <!-- Título del encabezado -->
+    <ion-title class="app-title">CARRITO</ion-title>
+
+    <!-- Botón de volver -->
     <ion-buttons slot="end">
-      <!-- Botón para catálogo -->
-      <ion-button routerLink="/menu" fill="clear" color="primary">
-        <ion-icon name="list-outline" slot="icon-only"></ion-icon>
-      </ion-button>      
-      <!-- Botón para volver atras -->
-      <ion-button fill="clear" (click)="goBack()">
+      <ion-button fill="clear" (click)="goBack()" class="goback-button">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Mostrar cuando el carrito está vacío -->
-  <div *ngIf="cartItems.length === 0" class="empty-cart ion-text-center">
-    <ion-icon name="cart-outline" size="large"></ion-icon>
-    <p>Tu carrito está vacío</p>
+<ion-content>
+  <!-- Mensaje destacado debajo del título -->
+  <div class="highlight-banner">
+    <p class="highlight-text">¡Revisa y confirma tu pedido antes de continuar!</p>
   </div>
 
   <!-- Lista de productos en el carrito -->
-  <ion-list *ngIf="cartItems.length > 0">
-    <ion-item *ngFor="let item of cartItems">
+  <ion-card *ngFor="let item of cartItems; let i = index" class="promo-card">
+    <ion-card-header>
+      <ion-card-title>{{ item.product.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
       <!-- Imagen del producto -->
-      <ion-thumbnail slot="start">
-        <img [src]="item.imageUrl" [alt]="item.name" />
-      </ion-thumbnail>
+      <div class="image-container">
+        <img [src]="item.product.imageUrl" [alt]="item.product.name" />
+      </div>
 
-      <!-- Detalles del producto -->
-      <ion-label>
-        <h2>{{ item.name }}</h2>
-        <p>Cantidad: {{ item.quantity }}</p>
-        <p>Precio unitario: ${{ item.price }}</p>
-        <p>Total: ${{ item.totalPrice }}</p>
-      </ion-label>
+      <!-- Descripción del producto -->
+      <p class="product-description">{{ item.product.description }}</p>
 
-      <!-- Botón para eliminar producto -->
-      <ion-button color="danger" fill="clear" (click)="removeFromCart(item.name)">
-        <ion-icon name="trash-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
+      <!-- Controles de cantidad -->
+      <div class="quantity-container">
+        <ion-button class="quantity-btn" (click)="decreaseQuantity(i)">
+          <ion-icon name="remove-outline"></ion-icon>
+        </ion-button>
+        <span class="quantity">{{ item.quantity }}</span>
+        <ion-button class="quantity-btn" (click)="increaseQuantity(i)">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+      </div>
 
-  <!-- Total general del carrito -->
-  <div *ngIf="cartItems.length > 0" class="cart-total ion-text-center ion-padding">
-    <h2>Total del Carrito: ${{ cartTotal }}</h2>
-  </div>
+      <!-- Precio total del producto -->
+      <div class="price-container">
+        <p class="price-value">Total: {{ item.totalPrice | currency: 'CLP' }}</p>
+      </div>
 
-  <!-- Botón para proceder al pago -->
-  <div *ngIf="cartItems.length > 0" class="ion-padding">
-    <ion-button expand="block" color="success" (click)="checkout()">
-      Proceder al Pago
-    </ion-button>
+      <!-- Botón para eliminar del carrito -->
+      <div class="actions-container">
+        <ion-button color="danger" fill="outline" (click)="removeFromCart(i)">Eliminar</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Resumen de precios -->
+  <div class="summary-container">
+    <p class="summary-text">Total del carrito: <strong>{{ totalCartPrice | currency: 'CLP' }}</strong></p>
+    <button class="promo-button" (click)="checkout()">Finalizar compra</button>
   </div>
 </ion-content>
