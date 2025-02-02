@@ -20,7 +20,6 @@
 </ion-header>
 
 <ion-content>
-  <!-- Contenedor principal -->
   <div class="login-container">
     <!-- Icono de perfil -->
     <div class="profile-icon">
@@ -31,15 +30,15 @@
     <p class="welcome-message">Bienvenido</p>
 
     <!-- Campos de entrada -->
-    <ion-item class="input-field">
-      <ion-label position="floating">Correo Electrónico</ion-label>
-      <ion-input type="email" placeholder="usuario@correo.com"></ion-input>
-    </ion-item>
+    <div class="input-container">
+      <ion-label class="input-label">Correo Electrónico</ion-label>
+      <ion-input type="email" placeholder="usuario@correo.com" class="input-box"></ion-input>
+    </div>
 
-    <ion-item class="input-field">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" placeholder="********"></ion-input>
-    </ion-item>
+    <div class="input-container">
+      <ion-label class="input-label">Contraseña</ion-label>
+      <ion-input type="password" placeholder="********" class="input-box"></ion-input>
+    </div>
 
     <!-- Botón de Login -->
     <div class="actions-container">

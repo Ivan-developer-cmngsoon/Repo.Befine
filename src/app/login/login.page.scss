@@ -1,4 +1,4 @@
-/* Header */
+/* Encabezado */
 .toolbar-header {
   background: white;
   padding: 0 16px;
@@ -10,63 +10,123 @@
 
 .app-title {
   font-family: 'Roboto', sans-serif;
-  font-size: 26px;
+  font-size: 26px; /* Título grande para destacar */
   font-weight: bold;
+  color: #0066cc; /* Azul corporativo */
+  text-align: center;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button ion-icon {
+  font-size: 28px;
+  color: #25D366;
+}
+
+/* Botón de volver */
+.goback-button ion-icon {
+  font-size: 28px;
   color: #0066cc;
+}
+
+.goback-button:hover ion-icon {
+  transform: scale(1.2);
+  color: #0099ff;
 }
 
 /* Contenedor de Login */
 .login-container {
-  margin: 24px auto;
-  padding: 16px;
+  margin: 30px auto;
+  padding: 20px;
   max-width: 90%;
   text-align: center;
 }
 
 /* Icono de perfil */
 .profile-icon ion-icon {
-  font-size: 64px;
-  color: #00509e; /* Azul oscuro */
-  margin-bottom: 16px;
+  font-size: 80px;
+  color: #00509e;
+  margin-bottom: 20px;
 }
 
 /* Mensaje de bienvenida */
 .welcome-message {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 /* Campos de entrada */
 .input-field {
-  margin: 16px 0;
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative; /* Para el posicionamiento absoluto del label */
 }
-
-.input-field ion-label {
-  color: #00509e; /* Azul oscuro */
+/* Estilo del Label */
+.input-label {
+  display: block;
+  font-size: 16px;
   font-weight: bold;
+  color: #00509e; /* Azul oscuro */
+  margin-bottom: 8px; /* Espacio entre el label y el input */
 }
 
-.input-field ion-input {
-  color: #333;
+/* Estilo del Label (Texto flotante) */
+.floating-label {
+  color: #666; /* Gris claro inicial */
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute; /* Posicionado para flotar */
+  top: 14px;
+  left: 16px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Estilo del Label al enfocar o escribir */
+.input-box:focus + .floating-label,
+.input-box:not(:placeholder-shown) + .floating-label {
+  top: -10px; /* Subir el texto */
+  font-size: 14px;
+  color: #00509e; /* Azul oscuro */
+}
+
+/* Estilo del Input */
+.input-box {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box:focus {
+  border-color: #00509e;
+  box-shadow: 0 4px 6px rgba(0, 80, 158, 0.2);
+  outline: none;
 }
 
 /* Botón de acción */
 .actions-container {
-  margin-top: 24px;
+  margin-top: 30px;
 }
 
 .promo-button {
   display: block;
   width: 100%;
   text-align: center;
-  background: linear-gradient(to right, #0066cc, #0099ff); /* Gradiente azul */
+  background: linear-gradient(to right, #0066cc, #0099ff);
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 14px;
+  border-radius: 10px;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -74,14 +134,14 @@
 }
 
 .promo-button:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   background: linear-gradient(to right, #0055aa, #007acc);
 }
 
 /* Mensaje de registro */
 .register-message {
-  margin-top: 16px;
+  margin-top: 20px;
   font-size: 1rem;
   color: #333;
 }
